@@ -1,11 +1,14 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <body>
-
+            
             {% include "header.html" %}
+            <main>
             {% block main_block %}
-
+                ## see pylands/templates/home.html on how to use 
             {% endblock %}
+            </main>
             {% include "footer.html" %}
 
         </body>
