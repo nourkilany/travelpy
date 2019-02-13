@@ -1,4 +1,4 @@
-# customize HotelBooking App URLS Routing from travelPyHotelBooking
+# customize carRent App URLS Routing from travelPycarRent
 
 from django.conf.urls import url
 
