@@ -7,4 +7,4 @@ from django.http import HttpResponse
 
 def index(request):
 
-    return HttpResponse("<h1>HOTEL BOOKING YA WALA</h1>")
+    return render(request, 'travelPyHotelBooking/index.html')
