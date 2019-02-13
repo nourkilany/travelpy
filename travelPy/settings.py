@@ -61,9 +61,10 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
                 TEMPLATE_DIR,
-                os.path.join(BASE_DIR,'templates/'),
+                os.path.join(BASE_DIR,'templates/*'),
                 #pylands 
-                os.path.join(BASE_DIR,'pylands/templates/'),
+                os.path.join(BASE_DIR,'templates/pylands'),
+                os.path.join(BASE_DIR,'templates/travelPyUserBlog')
                 ],
         'APP_DIRS': True,
         'OPTIONS': {
