@@ -28,5 +28,6 @@ urlpatterns = [
     url(r'^blog/', include('travelPyUserBlog.url')),
     #pyhotels urls
     url(r'^hotelBooking/', include('travelPyHotelBooking.url')),
-
+    #pycarrent urls
+    url(r'^carRental/', include('travelPyCarRent.url'))
 ]
