@@ -4,8 +4,14 @@
     <list default="true" id="554fa73a-9c7e-40a2-a214-cfa7bcd864be" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/travelPy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/travelPy/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/travelPy/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/travelPy/urls.py" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/travelPy/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/travelPy/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelPyHotelBooking/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/travelPyHotelBooking/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelPyUserBlog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/travelPyUserBlog/views.py" afterDir="false" />
+>>>>>>> ec433d4e4fa645c0e4373348e326eed62fee00eb
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,12 +20,29 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/travelPy/settings.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="429">
               <caret line="39" column="14" lean-forward="true" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+=======
+            <state relative-caret-position="165">
+              <caret line="64" column="31" lean-forward="true" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/travelPyUserBlog/url.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+>>>>>>> ec433d4e4fa645c0e4373348e326eed62fee00eb
             </state>
           </provider>
         </entry>
@@ -27,8 +50,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/travelPy/urls.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="460">
               <caret line="20" column="46" lean-forward="true" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+=======
+            <state relative-caret-position="420">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+>>>>>>> ec433d4e4fa645c0e4373348e326eed62fee00eb
               <folding>
                 <element signature="e#642#674#0" expanded="true" />
               </folding>
@@ -37,18 +65,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/pylands/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="138">
               <caret line="6" column="1" selection-start-line="6" selection-end-line="6" selection-end-column="1" />
               <folding>
                 <element signature="e#1#41#0" expanded="true" />
+=======
+        <entry file="file://$PROJECT_DIR$/travelPyUserBlog/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" lean-forward="true" selection-end-line="10" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+>>>>>>> ec433d4e4fa645c0e4373348e326eed62fee00eb
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/pylands/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="138">
@@ -71,29 +109,60 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="46">
               <caret line="2" column="9" lean-forward="true" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+=======
+        <entry file="file://$PROJECT_DIR$/templates/travelPyUserBlog/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+>>>>>>> ec433d4e4fa645c0e4373348e326eed62fee00eb
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/pylands/template/footer.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="46">
               <caret line="2" column="9" lean-forward="true" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+=======
+        <entry file="file://$PROJECT_DIR$/travelPyHotelBooking/url.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="25" />
+>>>>>>> ec433d4e4fa645c0e4373348e326eed62fee00eb
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/pylands/template/home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="161">
               <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+=======
+        <entry file="file://$PROJECT_DIR$/travelPyHotelBooking/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+>>>>>>> ec433d4e4fa645c0e4373348e326eed62fee00eb
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -102,6 +171,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/travelPy/settings.py" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/travelPy/urls.py" />
         <option value="$PROJECT_DIR$/pylands/template/home.html" />
         <option value="$PROJECT_DIR$/pylands/template/header.html" />
@@ -109,6 +179,15 @@
         <option value="$PROJECT_DIR$/pylands/template/base.html" />
         <option value="$PROJECT_DIR$/pylands/urls.py" />
         <option value="$PROJECT_DIR$/pylands/views.py" />
+=======
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/travelPyHotelBooking/url.py" />
+        <option value="$PROJECT_DIR$/travelPyUserBlog/url.py" />
+        <option value="$PROJECT_DIR$/templates/travelPyUserBlog/index.html" />
+        <option value="$PROJECT_DIR$/travelPy/urls.py" />
+        <option value="$PROJECT_DIR$/travelPyUserBlog/views.py" />
+        <option value="$PROJECT_DIR$/travelPyHotelBooking/views.py" />
+>>>>>>> ec433d4e4fa645c0e4373348e326eed62fee00eb
       </list>
     </option>
   </component>
@@ -128,10 +207,22 @@
         <subPane>
           <expand>
             <path>
-              <item name="travelpy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="travelpy" type="462c0819:PsiDirectoryNode" />
+              <item name="travelPy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="travelPy" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
+              <item name="travelPy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="travelPy" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="travelPy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="travelPy" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="travelPyUserBlog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+<<<<<<< HEAD
               <item name="travelpy" type="b2602c69:ProjectViewProjectNode" />
               <item name="travelpy" type="462c0819:PsiDirectoryNode" />
               <item name="pylands" type="462c0819:PsiDirectoryNode" />
@@ -140,6 +231,16 @@
               <item name="travelpy" type="b2602c69:ProjectViewProjectNode" />
               <item name="travelpy" type="462c0819:PsiDirectoryNode" />
               <item name="travelPy" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="travelPy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="travelPy" type="462c0819:PsiDirectoryNode" />
+              <item name="travelPy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="travelPy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="travelPy" type="462c0819:PsiDirectoryNode" />
+              <item name="travelPyHotelBooking" type="462c0819:PsiDirectoryNode" />
+>>>>>>> ec433d4e4fa645c0e4373348e326eed62fee00eb
             </path>
           </expand>
           <select />
@@ -148,6 +249,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.scopes" />
   </component>
@@ -177,9 +279,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="63" y="27" width="1857" height="1053" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16830066" />
+=======
+    <frame x="0" y="25" width="1366" height="678" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19136262" />
+>>>>>>> ec433d4e4fa645c0e4373348e326eed62fee00eb
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -190,7 +298,11 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.21269488" />
+=======
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.5701275" />
+>>>>>>> ec433d4e4fa645c0e4373348e326eed62fee00eb
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -199,13 +311,93 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/travelPy/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/travelPy/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="53" lean-forward="true" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/travelPy/settings.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="429">
           <caret line="39" column="14" lean-forward="true" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+=======
+        <state relative-caret-position="165">
+          <caret line="64" column="31" lean-forward="true" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/travelPyHotelBooking/url.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/travelPyUserBlog/url.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/travelPy/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#642#674#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/travelPyUserBlog/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/travelPyHotelBooking/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/travelPyUserBlog/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+>>>>>>> ec433d4e4fa645c0e4373348e326eed62fee00eb
         </state>
       </provider>
     </entry>
