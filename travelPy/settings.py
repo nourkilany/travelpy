@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pylands',
     'travelPyCarRent',
+    'travelPyUserBlog',
+    'travelPyHotelBooking',
 ]
 
 MIDDLEWARE = [
@@ -61,11 +63,11 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-                TEMPLATE_DIR,
-                os.path.join(BASE_DIR,'templates/'),
-                #pylands 
-                os.path.join(BASE_DIR,'pylands/templates/'),
-                ],
+            TEMPLATE_DIR,
+            os.path.join(BASE_DIR, 'templates/'),
+            # pylands
+            os.path.join(BASE_DIR, 'pylands/templates/'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -89,7 +91,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'travelpydb',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'Os@12345',
         'HOST': 'localhost',
         'PORT': '3306'
     }
