@@ -69,11 +69,7 @@ TEMPLATES = [
                 os.path.join(BASE_DIR,'templates/travelPyLands'),
                 os.path.join(BASE_DIR,'templates/travelPyUserBlog')
                 ],
-        #     TEMPLATE_DIR,
-        #     os.path.join(BASE_DIR, 'templates/'),
-        #     # pylands
-        #     os.path.join(BASE_DIR, 'pylands/templates/'),
-        # ],
+                
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
