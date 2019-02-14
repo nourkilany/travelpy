@@ -23,7 +23,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # pylands urls
-    url(r'^pylands/', include("pylands.urls")),
+    url(r'^pylands/', include("travelPyLands.urls")),
     #pyblogs urls    
     url(r'^blog/', include('travelPyUserBlog.url')),
     #pyhotels urls

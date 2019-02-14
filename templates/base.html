@@ -1,16 +1,38 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <body>
-            
-            {% include "header.html" %}
-            <main>
-            {% block main_block %}
-                ## see pylands/templates/home.html on how to use 
-            {% endblock %}
-            </main>
-            {% include "footer.html" %}
 
-        </body>
+
+        <!-- --- static keyword is a shorthand for the path from system root folder to the static folder  -->
+        <!--  --- static -> /home/x/y/z/travelpy/static/ -->
+        <link rel="stylesheet" href="{% static 'styles/main.css' %}" type="text/css">
+
+        <!--  how to manage multiple css ?? linking them underneath each other may cause some classes to be overwriten  -->
+        <!--  
+            Use shorthand before each class ?
+            example ->  for shared resources use 
+                <div class = " shared-button "> ???
+                <div class = " land-button   "> ??? 
+                <div class = " blog-button   "> ???
+                <div class = " lend-button   "> ???
+
+                    ____ open for suggestions !
+        -->
+
+
     </head>
+
+    <body>
+        <div class="test">
+            Hello
+        </div>
+        {% include "header.html" %}
+        <main>
+        {% block main_block %}
+            ## see pylands/templates/home.html on how to use 
+        {% endblock %}
+        </main>
+        {% include "footer.html" %}
+    </body>
 </html>
