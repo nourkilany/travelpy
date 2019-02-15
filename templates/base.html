@@ -8,12 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- --- static keyword is a shorthand for the path from system root folder to the static folder  -->
     <!--  --- static -> /home/x/y/z/travelpy/static/ -->
-    <link
-      rel="stylesheet"
-      href="{% static 'styles/main.css' %}"
-      type="text/css"
-    />
-
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'styles/all.css' %}" type="text/css"/>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.css' %}" type="text/css"/>
+    <!-- Lightbox -->
+    <link rel="stylesheet" href="{% static 'styles/lightbox.min.css' %}" type="text/css"/>
+    <!-- Custom -->
+    <link rel="stylesheet" href="{% static 'styles/syle.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}" type="text/css"/>
     <!--  how to manage multiple css ?? linking them underneath each other may cause some classes to be overwriten  -->
     <!--  
             Use shorthand before each class ?
@@ -36,5 +39,10 @@
         </main>
     
         {% include "footer.html" %}
+
+        <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'js/lightbox.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
       </body>
 </html>
