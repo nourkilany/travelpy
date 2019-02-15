@@ -7,4 +7,4 @@ class Country(models.Model):
 
 class City(models.Model):
     city_name = models.CharField(max_length = 200)
-    country = models.ForeignKey(Country)
+    country = models.ForeignKey('Country',on_delete=models.CASCADE)
