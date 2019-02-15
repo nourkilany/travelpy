@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-
-{% load staticfiles %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Hotel Booking</title>
-    <link rel="stylesheet" href="{% static 'travelPyHotelBooking/css/style.css' %}">
-</head>
-<body>
-
-<h1>  Hotel Booking Ya Wala  </h1>
-<img src="{% static 'travelPyHotelBooking/images/hotel_clarks.jpg' %}">
-
-
-</body>
-</html>
+{% extends "base.html" %} {% load static %} {% block main_block %}
+<div>
+  Hotel Booking Page
+</div>
+{% endblock %}
