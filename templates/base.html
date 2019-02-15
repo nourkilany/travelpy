@@ -1,7 +1,11 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Travel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- --- static keyword is a shorthand for the path from system root folder to the static folder  -->
     <!--  --- static -> /home/x/y/z/travelpy/static/ -->
     <link
@@ -21,16 +25,16 @@
 
                     ____ open for suggestions !
         -->
-  </head>
-
-  <body>
-    {% include "header.html" %}
-    <main>
-      {% block main_block %}
-      <!--  ## see pylands/templates/home.html on how to use  -->
-      {% endblock %}
-    </main>
-
-    {% include "footer.html" %}
-  </body>
+    
+</head>
+<body>
+        {% include "header.html" %}
+        <main>
+          {% block main_block %}
+          <!--  ## see pylands/templates/home.html on how to use  -->
+          {% endblock %}
+        </main>
+    
+        {% include "footer.html" %}
+      </body>
 </html>
