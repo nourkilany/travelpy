@@ -31,9 +31,6 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -65,11 +62,11 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-                TEMPLATE_DIR,
-                #pylands
-                os.path.join(BASE_DIR, 'templates/travelPyLands'),
-                ],
-                
+            TEMPLATE_DIR,
+            # pylands
+            os.path.join(BASE_DIR, 'templates/travelPyLands'),
+        ],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -93,7 +90,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'travelpydb',
         'USER': 'root',
-        'PASSWORD': 'Os@12345',
+        'PASSWORD': 'wallbase1qaz',
         'HOST': 'localhost',
         'PORT': '3306'
     }
