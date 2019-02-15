@@ -2,6 +2,29 @@
 {% load static %} 
 {% block main_block %}
 <div>
-  UserBlog
+
+  {% if citiesPlaces %}
+  <table>
+    <tr>
+      <th>City</th>
+      <th>Country</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Description</th>
+    </tr>
+    {% for place in citiesPlaces %}
+      <tr>
+        <td>{{place.name}}</td>
+        <td>{{place.name_suffix}}</td>
+        <td>{{place.location.lat}}</td>
+        <td>{{place.location.lng}}</td>
+        <td>{{place.perex}}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+  {% endif %}
+
+
 </div>
 {% endblock %}
