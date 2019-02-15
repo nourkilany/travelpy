@@ -8,7 +8,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # pylands urls
-    url(r'^$', include("travelPyLands.urls")),
+    url(r'^', include("travelPyLands.urls")),
     # pyblogs urls
     url(r'^blog/', include('travelPyUserBlog.url')),
     # pyhotels urls
