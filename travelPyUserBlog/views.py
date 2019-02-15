@@ -14,6 +14,6 @@ def index(request):
 
 def cities(request):
 
-    cities_list = Cities.objects.order_by('cityName')
+    cities_list = Cities.objects.filter(cityCountry='DE')
     cities_dict = {'cities': cities_list}
     return render(request, 'travelPyUserBlog/cities.html', context=cities_dict)

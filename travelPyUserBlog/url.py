@@ -6,5 +6,5 @@ from travelPyUserBlog import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^cities', views.cities, name='cities')
+    url(r'^cities/', views.cities, name='cities')
 ]
