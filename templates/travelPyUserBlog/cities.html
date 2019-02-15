@@ -7,16 +7,11 @@
 <body>
 
     {% if cities %}
-
-    <select>
-
         {% for city in cities %}
-            <option>
-                {{city}}
-            </option>
-        {% endfor %}
-    </select>
-
+            <h3>CityName: {{city.cityName}}</h3>
+            <h6>CityLatitude: {{city.cityLatitude}}</h6>
+            <h6>CityLongitude: {{city.cityLongitude}}</h6>
+            {% endfor %}
     {% endif %}
 
 </body>
