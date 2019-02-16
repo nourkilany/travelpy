@@ -4,25 +4,26 @@
     <!-- <div class="row align-items-center justify-content-center text-center"> -->
 
       <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-        <div class="search">  
+        <div class="search overlay">  
           <div class="container fill_height">
-            <div class="row fill_height">
+            <div class="row fill_height ">
               <!-- <div class="col fill_height"> -->
-                <div class="search_panel" style="margin-top: 100px;">
+                
+                <div class="search_panel search_style">
                   <form action="#" id="search_form_2" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
                     <div class="search_item">
-                      <div>destination</div>
-                      <input type="text" class="destination search_input" required="required">
+                      <div class="label-location">Pickup Location</div>
+                      <input type="text" class="destination search_input input-location" required="required">
                     </div>
                     <div class="search_item">
-                      <div>check in</div>
-                      <input type="text" class="check_in search_input" placeholder="YYYY-MM-DD">
+                      <div class="label-from">From</div>
+                      <input type="text" class="check_in search_input input-from" placeholder="YYYY-MM-DD">
                     </div>
-                    <div class="search_item">
-                      <div>check out</div>
+                    <div class="search_item  input-to">
+                      <div class="label-to">To</div>
                       <input type="text" class="check_out search_input" placeholder="YYYY-MM-DD">
                     </div>
-                    <button class="btn btn-primary" style="margin-top: 25px;margin-left: 10px;">search</button>
+                    <button class="btn btn-primary search-button">search</button>
                   </form>
                 </div>
               <!-- </div> -->
