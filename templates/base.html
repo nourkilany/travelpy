@@ -1,21 +1,6 @@
 {% load static %}
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Travel</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- --- static keyword is a shorthand for the path from system root folder to the static folder  -->
-    <!--  --- static -> /home/x/y/z/travelpy/static/ -->
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{% static 'styles/all.css' %}" type="text/css"/>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="{% static 'styles/bootstrap.css' %}" type="text/css"/>
-    <!-- Lightbox -->
-    <link rel="stylesheet" href="{% static 'styles/lightbox.min.css' %}" type="text/css"/>
-    <!-- Custom -->
-    <link rel="stylesheet" href="{% static 'styles/syle.css' %}" type="text/css"/>
-    <link rel="stylesheet" href="{% static 'styles/main.css' %}" type="text/css"/>
     <!--  how to manage multiple css ?? linking them underneath each other may cause some classes to be overwriten  -->
     <!--  
             Use shorthand before each class ?
@@ -27,7 +12,29 @@
 
                     ____ open for suggestions !
         -->
-    
+    <title>PyLands &mdash; Colorlib Website Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700">
+    <link rel="stylesheet" href="../../static/travelPyLands/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="{% static 'travelPyLands/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'travelPyLands/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'travelPyLands/css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'travelPyLands/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'travelPyLands/css/owl.theme.default.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'travelPyLands/css/bootstrap-datepicker.css' %}">
+
+    <link rel="stylesheet" href="{% static 'travelPyLands/fonts/flaticon/font/flaticon.css' %}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
+
+
+    <link rel="stylesheet" href="{% static 'travelPyLands/css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'travelPyLands/css/style.css' %}">  
 </head>
 <body>
         {% include "header.html" %}
@@ -39,9 +46,19 @@
     
         {% include "footer.html" %}
 
-        <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-        <script src="{% static 'js/lightbox.min.js' %}"></script>
-        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-        <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'travelPyLands/js/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'travelPyLands/js/jquery-migrate-3.0.1.min.js' %}"></script>
+        <script src="{% static 'travelPyLands/js/jquery-ui.js' %}"></script>
+        <script src="{% static 'travelPyLands/js/popper.min.js' %}"></script>
+        <script src="{% static 'travelPyLands/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'travelPyLands/js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'travelPyLands/js/jquery.stellar.min.js' %}"></script>
+        <script src="{% static 'travelPyLands/js/jquery.countdown.min.js' %}"></script>
+        <script src="{% static 'travelPyLands/js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'travelPyLands/js/bootstrap-datepicker.min.js' %}"></script>
+        <script src="{% static 'travelPyLands/js/aos.js' %}"></script>
+      
+        <script src="{% static 'travelPyLands/js/main.js' %}"></script>
+      
       </body>
 </html>
