@@ -27,5 +27,11 @@ def cities(request, country_name):
 
     cities_list = Cities.objects.filter(cityCountry=country_name).order_by('cityName').iterator()
     cities_dict = {'cities': cities_list}
+    ay7aga()
     return render(request, 'travelPyUserBlog/cities.html', context=cities_dict)
 
+
+
+def ay7aga():
+
+    print("ay7aga5ara")
