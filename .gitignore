@@ -51,6 +51,6 @@ venv.bak/
 .idea*
 static/travelPyHotelBooking/images/*
 static/travelPyUserBlog/images/*
-
+static/travelPyLands/images/*
 
 
