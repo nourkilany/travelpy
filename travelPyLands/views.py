@@ -14,16 +14,8 @@ api_token = 'XCAO5wKKj26IL5oEdfuwY1TpxjOxnIWTfGW4cik4'
 def home(request):
     # return HttpResponse('Hello Index!')
     # api_token = 'XCAO5wKKj26IL5oEdfuwY1TpxjOxnIWTfGW4cik4'
-    response = requests.get('https://api.sygictravelapi.com/1.1/en/places/list?levels=country',
-                            None, headers={
-            'x-api-key': api_token
-        })
-    countriesData = response.json()
-    placesList = countriesData["data"]["places"]
-    for place in placesList:
-        place["image"] = getImageFromApi(place['id'])
 
-    countriesData_dict = {'topCountries': placesList}
+    countriesData_dict = {'topCountries': getCountriesDataApi()}
     return render(request, "travelPyLands/index.html", context=countriesData_dict)
 
 def getImageFromApi(id):
@@ -34,4 +26,16 @@ def getImageFromApi(id):
     imagesData = response.json()
     return imagesData["data"]["media"][0]["url"]
 
+def getCountriesDataApi():
+    countriesResponse = requests.get('https://api.sygictravelapi.com/1.1/en/places/list?levels=country',
+                                     None, headers={
+            'x-api-key': api_token
+        })
+    countriesData = countriesResponse.json()
+    countriesList = addImagesToList(countriesData["data"]["places"])
+    return countriesList
 
+def addImagesToList(lst):
+    for items in lst:
+        items["image"] = getImageFromApi(items['id'])
+    return lst
