@@ -36,66 +36,24 @@
     <div class="container">
       <div class="row justify-content-center mb-5">
         <div class="col-md-7 text-center">
-          <h2 class="font-weight-light text-black">Our Destinations</h2>
+          <h2 class="font-weight-light text-black">TOP CITIES</h2>
           <p class="color-black-opacity-5">Choose Your Next Destination</p>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-          <a href="#" class="unit-1 text-center">
-            <img src="../../static/travelPyLands/images/01-greece.jpg" alt="Image" class="img-fluid">
-            <div class="unit-1-text">
-              <strong class="text-primary mb-2 d-block">$590</strong>
-              <h3 class="unit-1-heading">Santorini, Greece</h3>
+        {% if topCities %}
+          {% for city in topCities %}
+            <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+              <a href="#" class="unit-1 text-center">
+                <img src={{city.image}} alt="Image" class="img-fluid" style="width: 350px; height: 399px">
+                <div class="unit-1-text">
+                  <h3 class="unit-1-heading">{{city.name}}, {{city.name_suffix}}</h3>
+                </div>
+              </a>
             </div>
-          </a>
+        {% endfor %}
         </div>
-        <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-          <a href="#" class="unit-1 text-center">
-            <img src="../../static/travelPyLands/images/02-rome.jpg" alt="Image" class="img-fluid">
-            <div class="unit-1-text">
-              <h3 class="unit-1-heading">Rome, Italy</h3>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-          <a href="#" class="unit-1 text-center">
-            <img src="https://media-cdn.sygictraveldata.com/media/612664395a40232133447d33247d3831373035373930.jpg" alt="Image" class="img-fluid" style="width: 350px; height: 399px">
-            <div class="unit-1-text">
-              <strong class="text-primary mb-2 d-block">$390</strong>
-              <h3 class="unit-1-heading">Mount Fuji, Japan</h3>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-          <a href="#" class="unit-1 text-center">
-            <img src="https://media-cdn.sygictraveldata.com/media/poi:8672" alt="Image" class="img-fluid" style="width: 350px; height: 399px">
-            <div class="unit-1-text">
-              <strong class="text-primary mb-2 d-block">$320</strong>
-              <h3 class="unit-1-heading">Camels, Dubai</h3>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-          <a href="#" class="unit-1 text-center">
-            <img src="https://media-cdn.sygictraveldata.com/media/612664395a40232133447d33247d38313031393931303830.jpg" alt="Image" class="img-fluid" style="width: 350px; height: 399px">
-            <div class="unit-1-text">
-              <strong class="text-primary mb-2 d-block">$290</strong>
-              <h3 class="unit-1-heading">Elizabeth Tower, London</h3>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-          <a href="#" class="unit-1 text-center">
-            <img src="../../static/travelPyLands/images/06-australia.jpg" alt="Image" class="img-fluid">
-            <div class="unit-1-text">
-              <strong class="text-primary mb-2 d-block">$390</strong>
-              <h3 class="unit-1-heading">Opera House, Australia</h3>
-            </div>
-          </a>
-        </div>
-      </div>
+      {% endif %}
     </div>
   </div>
 </div>
