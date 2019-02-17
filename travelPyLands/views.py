@@ -65,9 +65,23 @@ def getPoiOfCity(cityId):
     poiList = addImagesToList(poiData["data"]["places"])
     return poiList
 
-
+# send cityPoi from api to be rendered in cityPoi.html
 def cityPoi(request,countryName,cityName):
     city = City.objects.filter(city_name=cityName)
     cityPoiData_dict = {'poi':getPoiOfCity(city[0].id),
-                        'countryName':countryName}
+                        'cityName':cityName}
     return render(request,"travelPyLands/cityPoi.html",context=cityPoiData_dict)
+
+def poiDescription(request,poiName,poiId):
+    poiDesResponse = requests.get(
+        f'https://api.sygictravelapi.com/1.1/en/places/{poiId}',
+        None, headers={
+            'x-api-key': api_token
+        })
+    poiDesData = poiDesResponse.json()
+    poiDesPlace = poiDesData["data"]["place"]
+    poiDesMediaImg = poiDesData["data"]["place"]["main_media"]["media"][0]["url"]
+    poiDesData_dict = {'poiDesPlaces':poiDesPlace,
+                       'DesMediaImg':poiDesMediaImg,
+                       'poiName':poiName}
+    return render(request,"travelPyLands/poiDes.html",context=poiDesData_dict)
