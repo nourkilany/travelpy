@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'travelPyLands',
     'travelPyCarRent',
-    'travelPyUserBlog',
+    'travelPyUserStory',
     'travelPyHotelBooking',
 ]
 
@@ -63,6 +63,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             TEMPLATE_DIR,
+            TEMPLATE_DIR + '/travelPyUserStory'
 
             ],
 
@@ -89,7 +90,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'travelpydb',
         'USER': 'root',
-        'PASSWORD': 'Os@12345',
+        'PASSWORD': 'Pa55wod_',
         'HOST': 'localhost',
         'PORT': '3306'
     }
@@ -135,4 +136,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     STATIC_DIR,
+    
 ]
