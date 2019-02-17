@@ -2,7 +2,11 @@
 *.log
 *.pot
 *.pyc
-__pycache__/
+travelPy/__pycache__/
+travelPyCarRent/__pycache__/
+travelPyHotelBooking/__pycache__/
+travelPyLands/__pycache__/
+travelPyUserStory/__pycache__/
 local_settings.py
 db.sqlite3
 media
