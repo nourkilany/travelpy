@@ -44,7 +44,7 @@
         {% if topCities %}
           {% for city in topCities %}
             <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-              <a href="#" class="unit-1 text-center">
+              <a href="/{{city.name_suffix}}/{{city.name}}" class="unit-1 text-center">
                 <img src={{city.image}} alt="Image" class="img-fluid" style="width: 350px; height: 399px">
                 <div class="unit-1-text">
                   <h3 class="unit-1-heading">{{city.name}}, {{city.name_suffix}}</h3>

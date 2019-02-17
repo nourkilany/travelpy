@@ -57,7 +57,7 @@ def addImagesToList(lst):
 
 # get top 8 poi of city with it's id from database and return list of them
 def getPoiOfCity(cityId):
-    poiResponse = requests.get(f'https://api.sygictravelapi.com/1.1/en/places/list?parent=city:{cityId}&levels=poi&limit=8',
+    poiResponse = requests.get(f'https://api.sygictravelapi.com/1.1/en/places/list?parent=city:{cityId}&levels=poi&limit=9',
                                      None, headers={
             'x-api-key': api_token
         })
