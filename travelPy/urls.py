@@ -10,7 +10,7 @@ urlpatterns = [
     # pylands urls
     url(r'^', include("travelPyLands.urls")),
     # pyblogs urls
-    url(r'^blog/', include('travelPyUserBlog.url')),
+    url(r'^story/', include('travelPyUserStory.url')),
     # pyhotels urls
     url(r'^hotelBooking/', include('travelPyHotelBooking.url')),
     # pycarrent urls
