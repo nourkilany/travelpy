@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% load static %} {% block main_block %}
+
+<div class="site-wrap">
+  <div class="site-section">
+
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-7 text-center">
+          <h2 class="font-weight-light text-black">TOP experiences in {{countryName}} </h2>
+          <p class="color-black-opacity-5">Choose Your Next Destination</p>
+        </div>
+      </div>
+      <div class="row">
+        {% if poi %}
+          {% for po in poi %}
+            <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+              <a href="#" class="unit-1 text-center">
+                <img src={{po.image}} alt="Image" class="img-fluid" style="width: 350px; height: 399px">
+                <div class="unit-1-text">
+                  <h3 class="unit-1-heading">{{po.name}}</h3>
+                </div>
+              </a>
+            </div>
+        {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

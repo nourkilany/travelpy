@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import requests
+from travelPyLands.models import City,Country
 
 # Create your views here.
 
@@ -53,3 +54,20 @@ def addImagesToList(lst):
     for items in lst:
         items["image"] = getImageFromApi(items['id'])
     return lst
+
+# get top 8 poi of city with it's id from database and return list of them
+def getPoiOfCity(cityId):
+    poiResponse = requests.get(f'https://api.sygictravelapi.com/1.1/en/places/list?parent=city:{cityId}&levels=poi&limit=8',
+                                     None, headers={
+            'x-api-key': api_token
+        })
+    poiData = poiResponse.json()
+    poiList = addImagesToList(poiData["data"]["places"])
+    return poiList
+
+
+def cityPoi(request,countryName,cityName):
+    city = City.objects.filter(city_name=cityName)
+    cityPoiData_dict = {'poi':getPoiOfCity(city[0].id),
+                        'countryName':countryName}
+    return render(request,"travelPyLands/cityPoi.html",context=cityPoiData_dict)
