@@ -72,7 +72,7 @@ def cityPoi(request,countryName,cityName):
                         'cityName':cityName}
     return render(request,"travelPyLands/cityPoi.html",context=cityPoiData_dict)
 
-def poiDescription(request,poiName,poiId):
+def poiDescription(request,poiId):
     poiDesResponse = requests.get(
         f'https://api.sygictravelapi.com/1.1/en/places/{poiId}',
         None, headers={
@@ -82,6 +82,5 @@ def poiDescription(request,poiName,poiId):
     poiDesPlace = poiDesData["data"]["place"]
     poiDesMediaImg = poiDesData["data"]["place"]["main_media"]["media"][0]["url"]
     poiDesData_dict = {'poiDesPlaces':poiDesPlace,
-                       'DesMediaImg':poiDesMediaImg,
-                       'poiName':poiName}
+                       'DesMediaImg':poiDesMediaImg}
     return render(request,"travelPyLands/poiDes.html",context=poiDesData_dict)
