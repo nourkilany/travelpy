@@ -1,18 +1,20 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import requests
-from travelPyLands.models import City,Country
+from travelPyLands.models import City,Country,Continent
 
 # Create your views here.
 
-# XCAO5wKKj26IL5oEdfuwY1TpxjOxnIWTfGW4cik4
-api_token = 'XCAO5wKKj26IL5oEdfuwY1TpxjOxnIWTfGW4cik4'
+# bH0BGm7m5d3fxdhL25Ht55hsxjOt59Cn6udPTXnq
+api_token = 'bH0BGm7m5d3fxdhL25Ht55hsxjOt59Cn6udPTXnq'
 
 
 # send data from api to be rendered in index.html
 def home(request):
+
     indexData_dict = {'topCountries': getTop('country'),
-                      'topCities': getTop('city')
+                      'topCities': getTop('city'),
+                      'continents': getContinents(),
                       }
     return render(request, "travelPyLands/index.html", context=indexData_dict)
 
@@ -43,21 +45,23 @@ def addImagesToList(lst):
         items["image"] = getImageFromApi(items['id'])
     return lst
 
-# get top 8 poi of city with it's id from database and return list of them
-def getPoiOfCity(cityId):
-    poiResponse = requests.get(f'https://api.sygictravelapi.com/1.1/en/places/list?parent=city:{cityId}&levels=poi&limit=9',
-                                     None, headers={
+# get  8 entities from api and return list of them
+def getApiList(parent, parentId, level):
+    response = requests.get(f'https://api.sygictravelapi.com/1.1/en/places/list?parent={parent}:{parentId}&levels={level}&limit=9',
+                            None, headers={
             'x-api-key': api_token
         })
-    poiData = poiResponse.json()
-    poiList = addImagesToList(poiData["data"]["places"])
-    return poiList
+    apiData = response.json()
+    print(apiData["data"]["places"][0]["id"])
+    apiDataList = addImagesToList(apiData["data"]["places"])
+    return apiDataList
 
 # send cityPoi from api to be rendered in cityPoi.html
-def cityPoi(request,countryName,cityName):
+def cityPoi(request,cityName):
     city = City.objects.filter(city_name=cityName)
-    cityPoiData_dict = {'poi':getPoiOfCity(city[0].id),
-                        'cityName':cityName}
+    cityPoiData_dict = {'poi':getApiList('city',city[0].id,'poi'),
+                        'cityName':cityName,
+                        'continents': getContinents()}
     return render(request,"travelPyLands/cityPoi.html",context=cityPoiData_dict)
 
 def poiDescription(request,poiId):
@@ -70,8 +74,25 @@ def poiDescription(request,poiId):
     poiDesPlace = poiDesData["data"]["place"]
     poiDesMediaImg = poiDesData["data"]["place"]["main_media"]["media"][0]["url"]
     poiDesData_dict = {'poiDesPlaces':poiDesPlace,
-                       'DesMediaImg':poiDesMediaImg}
+                       'DesMediaImg':poiDesMediaImg,
+                       'continents': getContinents()}
     return render(request,"travelPyLands/poiDes.html",context=poiDesData_dict)
 
+
+def getcountries(request,continentId):
+    countriesData_dict = {'countries':getApiList('continent',continentId,'country'),
+                          'continents': getContinents()}
+    return render(request, "travelPyLands/countries.html",  context=countriesData_dict)
+
+
+def getcities(request,countryId):
+    countryId = int(countryId[8:])
+    print(countryId)
+    citiesData_dict={'cities':getApiList('country',countryId,'city'),
+                     'continents': getContinents()}
+    return render(request, "travelPyLands/cities.html", context=citiesData_dict)
+
+def getContinents():
+    return Continent.objects.all()
 
 # https://api.sygictravelapi.com/1.1/en/places/list?parents=city:40&categories=sleeping&limit=10
