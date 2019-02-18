@@ -15,12 +15,13 @@
             </li>
             <li class="has-children">
               <a href="destination.html">Destinations</a>
-              <ul class="dropdown">
-                <li><a href="#">Japan</a></li>
-                <li><a href="#">Europe</a></li>
-                <li><a href="#">China</a></li>
-                <li><a href="#">France</a></li>
-              </ul>
+              {% if continents %}
+                <ul class="dropdown">
+                  {% for continent in continents %}
+                  <li><a href="http://127.0.0.1:8000/continent/{{continent.id}}">{{continent.continent_name}}</a></li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
             </li>
             <li class="has-children">
               <a href="">Bookings</a>
