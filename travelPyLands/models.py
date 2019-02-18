@@ -14,3 +14,10 @@ class City(models.Model):
 
     def __str__(self):
         return self.city_name
+
+
+class Continent(models.Model):
+    continent_name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.continent_name
