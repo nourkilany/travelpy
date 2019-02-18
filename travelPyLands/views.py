@@ -6,7 +6,7 @@ from travelPyLands.models import City,Country
 # Create your views here.
 
 # XCAO5wKKj26IL5oEdfuwY1TpxjOxnIWTfGW4cik4
-api_token = 'XCAO5wKKj26IL5oEdfuwY1TpxjOxnIWTfGW4c'
+api_token = 'XCAO5wKKj26IL5oEdfuwY1TpxjOxnIWTfGW4cik4'
 
 
 # send data from api to be rendered in index.html
