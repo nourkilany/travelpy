@@ -1,0 +1,8 @@
+{% extends "base.html" %} {% load static %} {% block main_block %}
+
+<form method="POST">
+{% csrf_token %}
+{{form}}
+<input type="submit"/>
+
+{% endblock %}
