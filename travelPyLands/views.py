@@ -14,13 +14,13 @@ def home(request):
 
     indexData_dict = {'topCountries': getTop('country'),
                       'topCities': getTop('city'),
-                      'continents': getContinents(),
+                       'continents': getContinents(),
                       }
     return render(request, "travelPyLands/index.html", context=indexData_dict)
 
 
 # get one image from api media with any id
-def getImageFromApi(id):
+def getImageFromApi(id): #-> get high image
     response = requests.get(f'https://api.sygictravelapi.com/1.1/en/places/{id}/media',
                             None, headers={
             'x-api-key': api_token
