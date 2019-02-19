@@ -58,6 +58,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'travelPy.urls'
 
+
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -90,7 +93,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'travelpydb',
         'USER': 'root',
-        'PASSWORD': 'wallbase1qaz',
+        'PASSWORD': 'Pa55wod_',
         'HOST': 'localhost',
         'PORT': '3306'
     }
