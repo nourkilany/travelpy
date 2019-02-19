@@ -20,11 +20,7 @@
 #     country["url"] = getImageFromApi(country['id'])
 #
 # print(countryArray)
-
-x = "country:85"
-x = int(x[8:])
-print(x)
-
-
-
-
+#
+# x = "country:85"
+# x = int(x[8:])
+# print(x)

@@ -52,7 +52,6 @@ def getApiList(parent, parentId, level):
             'x-api-key': api_token
         })
     apiData = response.json()
-    print(apiData["data"]["places"][0]["id"])
     apiDataList = addImagesToList(apiData["data"]["places"])
     return apiDataList
 
