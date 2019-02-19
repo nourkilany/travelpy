@@ -18,9 +18,7 @@ class Migration(migrations.Migration):
             name='City',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('sygic_id', models.CharField(max_length=50)),
                 ('city_name', models.CharField(max_length=200)),
-<<<<<<< HEAD
                 ('sygic_id', models.CharField(blank=True, max_length=50, null=True)),
                 ('city_perex', models.TextField(blank=True, null=True)),
                 ('city_desc', models.TextField(blank=True, null=True)),
@@ -29,15 +27,6 @@ class Migration(migrations.Migration):
                 ('city_rate', models.DecimalField(blank=True, decimal_places=10, max_digits=11, null=True)),
                 ('city_low_image', models.CharField(blank=True, max_length=400, null=True)),
                 ('city_high_image', models.CharField(blank=True, max_length=400, null=True)),
-=======
-                ('city_perex', models.TextField(default=None)),
-                ('city_desc', models.TextField(default=None)),
-                ('city_lat', models.FloatField(default=None)),
-                ('city_lng', models.FloatField(default=None)),
-                ('city_rate', models.DecimalField(decimal_places=10, default=None, max_digits=11)),
-                ('city_low_image', models.CharField(default=None, max_length=400)),
-                ('city_high_image', models.CharField(default=None, max_length=400)),
->>>>>>> c4cf9f34011d10f85fd3958287319d614edf217c
             ],
         ),
         migrations.CreateModel(
@@ -45,20 +34,14 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('continent_name', models.CharField(max_length=50)),
-<<<<<<< HEAD
                 ('sygic_id', models.CharField(blank=True, max_length=50, null=True)),
-=======
-                ('sygic_id', models.CharField(max_length=50)),
->>>>>>> c4cf9f34011d10f85fd3958287319d614edf217c
             ],
         ),
         migrations.CreateModel(
             name='Country',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('sygic_id', models.CharField(max_length=50)),
                 ('country_name', models.CharField(max_length=200)),
-<<<<<<< HEAD
                 ('sygic_id', models.CharField(blank=True, max_length=50, null=True)),
                 ('country_perex', models.TextField(blank=True, null=True)),
                 ('country_desc', models.TextField(blank=True, null=True)),
@@ -67,15 +50,6 @@ class Migration(migrations.Migration):
                 ('country_rate', models.DecimalField(blank=True, decimal_places=10, max_digits=11, null=True)),
                 ('country_low_image', models.CharField(blank=True, max_length=400, null=True)),
                 ('country_high_image', models.CharField(blank=True, max_length=400, null=True)),
-=======
-                ('country_perex', models.TextField(default=None)),
-                ('country_desc', models.TextField(default=None)),
-                ('country_lat', models.FloatField(default=None)),
-                ('country_lng', models.FloatField(default=None)),
-                ('country_rate', models.DecimalField(decimal_places=10, default=None, max_digits=11)),
-                ('country_low_image', models.CharField(default=None, max_length=400)),
-                ('country_high_image', models.CharField(default=None, max_length=400)),
->>>>>>> c4cf9f34011d10f85fd3958287319d614edf217c
                 ('continent', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='travelPyLands.Continent')),
             ],
         ),
@@ -84,7 +58,6 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('poi_name', models.CharField(max_length=200)),
-<<<<<<< HEAD
                 ('sygic_id', models.CharField(blank=True, max_length=50, null=True)),
                 ('poi_perex', models.TextField(blank=True, null=True)),
                 ('poi_desc', models.TextField(blank=True, null=True)),
@@ -93,15 +66,6 @@ class Migration(migrations.Migration):
                 ('poi_rate', models.DecimalField(blank=True, decimal_places=10, max_digits=11, null=True)),
                 ('poi_low_image', models.CharField(blank=True, max_length=400, null=True)),
                 ('poi_high_image', models.CharField(blank=True, max_length=400, null=True)),
-=======
-                ('poi_perex', models.TextField(default=None)),
-                ('poi_desc', models.TextField(default=None)),
-                ('poi_lat', models.FloatField(default=None)),
-                ('poi_lng', models.FloatField(default=None)),
-                ('poi_rate', models.DecimalField(decimal_places=10, default=None, max_digits=11)),
-                ('poi_low_image', models.CharField(default=None, max_length=400)),
-                ('poi_high_image', models.CharField(default=None, max_length=400)),
->>>>>>> c4cf9f34011d10f85fd3958287319d614edf217c
                 ('city', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='travelPyLands.City')),
             ],
         ),
