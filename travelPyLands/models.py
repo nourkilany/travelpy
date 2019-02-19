@@ -16,9 +16,9 @@ class Country(models.Model):
     country_desc  = models.TextField(default=None)
     country_lat   = models.FloatField(default=None)
     country_lng   = models.FloatField(default=None)
-    country_rate  =  models.DecimalField(default=None max_digits=11, decimal_places=10) #--> rating local !!
-    country_low_image = models.CharField(default=None max_length = 400)
-    country_high_image = models.CharField(default=None max_length = 400)
+    country_rate  =  models.DecimalField(default=None, max_digits=11, decimal_places=10) #--> rating local !!
+    country_low_image = models.CharField(default=None ,max_length = 400)
+    country_high_image = models.CharField(default=None ,max_length = 400)
     continent     = models.ForeignKey('Continent', on_delete=models.CASCADE)
 
     def __str__(self):
@@ -32,9 +32,9 @@ class City(models.Model):
     city_desc  = models.TextField(default=None)
     city_lat   = models.FloatField(default=None)
     city_lng   = models.FloatField(default=None)
-    city_rate  = models.DecimalField(default=None max_digits=11, decimal_places=10) #--> rating local !!
-    city_low_image = models.CharField(default=None max_length = 400)
-    city_high_image = models.CharField(default=None max_length = 400)
+    city_rate  = models.DecimalField(default=None, max_digits=11, decimal_places=10) #--> rating local !!
+    city_low_image = models.CharField(default=None, max_length = 400)
+    city_high_image = models.CharField(default=None, max_length = 400)
     country = models.ForeignKey('Country',on_delete=models.CASCADE)
 
     def __str__(self):
@@ -47,11 +47,10 @@ class Poi(models.Model):
     poi_desc  = models.TextField(default=None)
     poi_lat   = models.FloatField(default=None)
     poi_lng   = models.FloatField(default=None)
-    poi_rate  = models.DecimalField(default=None max_digits=11, decimal_places=10) # --> rating local !!
-    poi_low_image = models.CharField(default=None max_length = 400)
-    poi_high_image = models.CharField(default=None max_length = 400)
+    poi_rate  = models.DecimalField(default=None, max_digits=11, decimal_places=10) # --> rating local !!
+    poi_low_image = models.CharField(default=None, max_length = 400)
+    poi_high_image = models.CharField(default=None, max_length = 400)
     city = models.ForeignKey('City',on_delete=models.CASCADE)
 
     def __str__(self):
         return self.poi_name
-    
