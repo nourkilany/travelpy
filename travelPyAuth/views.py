@@ -58,8 +58,15 @@ def register_view(request):
 		login(request,user)
 		request.session['user_id'] = user.id
 		print("ID ", request.session['user_id'])
-		context={}
-		return render(request,"travelPyAuth/about.html",context)
+		x=user.id
+		y=user.username
+		print(x,y)
+		userData_dict={'id':x,
+		'username':y,
+		"aaa":"aaaaaaaaaaaaa"}
+		print(userData_dict)
+		return HttpResponseRedirect('/auth/home/')
+		
 
 		#if next:
 		#	return redirect(next)
@@ -76,4 +83,4 @@ def home_view(request):
 					'ay7aga':"aaaaaaa"}
 	print(userData.username)
 	print(userData.id)
-	return render(request,"travelPyAuth/home.html",context=userData_dict)
+	return render(request,"travelPyAuth/about.html",context=userData_dict)
