@@ -58,6 +58,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'travelPy.urls'
 
+
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

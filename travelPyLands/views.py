@@ -6,7 +6,7 @@ from travelPyLands.models import City,Country,Continent
 # Create your views here.
 
 
-api_token = 'bH0BGm7m5d3fxdhL25Ht55hsxjOt59Cn6udPTXnq'
+api_token = 'W9vr5kpoQvfhFOlCeFkv26PvSlVsKIG8V5zQexr0'
 
 
 # send data from api to be rendered in index.html
@@ -14,13 +14,13 @@ def home(request):
 
     indexData_dict = {'topCountries': getTop('country'),
                       'topCities': getTop('city'),
-                      'continents': getContinents(),
+                       'continents': getContinents(),
                       }
     return render(request, "travelPyLands/index.html", context=indexData_dict)
 
 
 # get one image from api media with any id
-def getImageFromApi(id):
+def getImageFromApi(id): #-> get high image
     response = requests.get(f'https://api.sygictravelapi.com/1.1/en/places/{id}/media',
                             None, headers={
             'x-api-key': api_token
@@ -52,7 +52,6 @@ def getApiList(parent, parentId, level):
             'x-api-key': api_token
         })
     apiData = response.json()
-    print(apiData["data"]["places"][0]["id"])
     apiDataList = addImagesToList(apiData["data"]["places"])
     return apiDataList
 
