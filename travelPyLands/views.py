@@ -60,8 +60,9 @@ def getApiList(parent, parentId, level):
 
 # send cityPoi from api to be rendered in cityPoi.html
 def cityPoi(request,cityName):
-    city = City.objects.filter(city_name=cityName)
-    cityPoiData_dict = {'poi':getApiList('city',city[0].id,'poi'),
+    city = City.objects.filter(city_name=cityName).first()
+    cityPoiData_dict = {'poi':getCityPlacesApi('sightseeing',city.id),
+                        'hotels':getCityPlacesApi('sleeping',city.id),
                         'cityName':cityName,
                         'continents': getContinents()}
     return render(request,"travelPyLands/cityPoi.html",context=cityPoiData_dict)
@@ -98,3 +99,13 @@ def getContinents():
     return Continent.objects.all()
 
 # https://api.sygictravelapi.com/1.1/en/places/list?parents=city:40&categories=sleeping&limit=10
+
+def getCityPlacesApi(category,cityId):
+    response = requests.get(
+        f'https://api.sygictravelapi.com/1.1/en/places/list?parents=city:{cityId}&categories={category}&limit=9',
+        None, headers={
+            'x-api-key': api_token
+        })
+    cityPlacesData = response.json()
+    cityPlacesDataList = addImagesToList(cityPlacesData["data"]["places"])
+    return cityPlacesDataList
