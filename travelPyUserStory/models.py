@@ -13,3 +13,4 @@ class Comment(models.Model):
     user_id  = models.IntegerField()
     story = models.ForeignKey('Story', on_delete=models.CASCADE)
     comment_body = models.TextField()
+
