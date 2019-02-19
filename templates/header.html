@@ -18,7 +18,7 @@
               {% if continents %}
                 <ul class="dropdown">
                   {% for continent in continents %}
-                  <li><a href="http://127.0.0.1:8000/continent/{{continent.id}}">{{continent.continent_name}}</a></li>
+                  <li><a href="/continent/{{continent.id}}">{{continent.continent_name}}</a></li>
                   {% endfor %}
                 </ul>
               {% endif %}

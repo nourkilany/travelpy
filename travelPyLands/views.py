@@ -26,7 +26,10 @@ def getImageFromApi(id): #-> get high image
             'x-api-key': api_token
         })
     imagesData = response.json()
-    return imagesData["data"]["media"][0]["url"]
+    if len(imagesData["data"]["media"]):
+        return imagesData["data"]["media"][0]["url"]
+    else:
+        return "https://i5.walmartimages.com/asr/f752abb3-1b49-4f99-b68a-7c4d77b45b40_1.39d6c524f6033c7c58bd073db1b99786.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF"
 
 # get top data from api
 def getTop(level):
@@ -85,9 +88,9 @@ def getcountries(request,continentId):
 
 
 def getcities(request,countryId):
-    countryId = int(countryId[8:])
+    countryIdInt = int(countryId[8:])
     print(countryId)
-    citiesData_dict={'cities':getApiList('country',countryId,'city'),
+    citiesData_dict={'cities':getApiList('country',countryIdInt,'city'),
                      'continents': getContinents()}
     return render(request, "travelPyLands/cities.html", context=citiesData_dict)
 
