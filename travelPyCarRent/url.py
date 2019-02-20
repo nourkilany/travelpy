@@ -5,5 +5,5 @@ from django.conf.urls import url
 from travelPyCarRent import views
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.new_car_rent, name='car_rent'),
 ]

@@ -60,6 +60,12 @@
         <script src="{% static 'travelPyLands/js/aos.js' %}"></script>
       
         <script src="{% static 'travelPyLands/js/main.js' %}"></script>
+        <script>
+            $( function() {
+              $('#id_from_date').attr('type', 'date');
+              $('#id_to_date').attr('type', 'date');
+            } );
+        </script>
       
       </body>
 </html>

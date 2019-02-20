@@ -10,12 +10,12 @@ from django.http import Http404
 # Create your views here.
 
 
-def all(request):
-    context = {'stories':Story.objects.filter(city_id = 1)}
-    for story in context['stories']:
-        pprint(story.id)
-        
-    return render(request, 'all.html',context)
+def all(request, city_id):
+    try:
+        context = {'stories':Story.objects.filter(city_id = 1)}
+        return render(request, 'all.html',context)
+    except Story.DoesNotExist:
+        raise Http404
 
 
 
@@ -28,7 +28,7 @@ def read_story(request, story_id):
             comment = Comment.objects.create(
                 comment_body = request.POST.get("comment_body"),
                 story_id = story_id,
-                user_id = 10
+                user_id = request.session['user_id']
             )
             return HttpResponseRedirect('/stories/'+str(story_id)+'/')
     
@@ -48,14 +48,19 @@ def read_story(request, story_id):
 
 def new_story(request):
     form = StoryForm()
+    print(request.session['user_id'])
     if request.method =="POST":
         form = StoryForm(request.POST)
         if form.is_valid():
             story = Story.objects.create(
                 story_title = request.POST.get("story_title"),
                 story_body  = request.POST.get('story_body'),
-                user_id     = 10,   # user_id ->
-                city_id     = 1     # city_id ->
+<<<<<<< HEAD
+                user     = auth.User,   # user_id ->
+=======
+                user_id     = request.session['user_id'],   # user_id ->
+>>>>>>> b3b244e1fd4cf4d7d50ddc7ed79230e229371a81
+                city_id     = 100     # city_id ->
                 )
             return HttpResponseRedirect('/stories/'+str(story.id)+'/')
     return render(request,'new.html', {'form':form})
@@ -68,15 +73,17 @@ def edit_story(request, story_id):
     if request.method == "POST":
         form = StoryForm(request.POST, instance = story)
         if form.is_valid():
-            story = Story.objects.get(id =story_id)
-            story.story_title = request.POST.get("story_title"),
-            story.story_body  = request.POST.get("story_body"),
-
+            try:
+                story = Story.objects.get(id =story_id)
+                story.story_title = request.POST.get("story_title"),
+                story.story_body  = request.POST.get("story_body"),
             # Solving weird format in story_title and story_body
-            story.story_title = story.story_title[0] 
-            story.story_body  = story.story_body [0]
-            story.save()
-            return HttpResponseRedirect('/stories/'+story_id+'/')
+                story.story_title = story.story_title[0] 
+                story.story_body  = story.story_body [0]
+                story.save()
+                return HttpResponseRedirect('/stories/'+story_id+'/')
+            except Story.DoesNotExist:
+                raise Http404
     else:
         form = StoryForm(instance = story)
     return render(request,'edit.html', {'form':form})

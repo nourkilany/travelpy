@@ -93,7 +93,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'travelpydb',
         'USER': 'root',
+<<<<<<< HEAD
         'PASSWORD': 'passw0rd',
+=======
+        'PASSWORD': 'Pa55wod_',
+>>>>>>> 658ffd2b732d2a8458042ec54ba00b85008aa035
         'HOST': 'localhost',
         'PORT': '3306'
     }
