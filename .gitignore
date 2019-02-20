@@ -57,4 +57,9 @@ static/travelPyHotelBooking/images/*
 static/travelPyUserBlog/images/*
 static/travelPyLands/images/*
 
-
+#migrations
+travelPy/migrations
+travelPyCarRent/migrations
+travelPyHotelBooking/migrations
+travelPyLands/migrations
+travelPyUserStory/migrations

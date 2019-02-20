@@ -1,10 +1,15 @@
 {% extends "base.html" %} {% load static %} {% block main_block %}
-<div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
-    <div class="h-entry">
-      <img src="{% static "images/hero_bg_1.jpg" %}" alt="Image" class="img-fluid">
-      <h2 class="font-size-regular"><a href="#">{{ story.story_title }}</a></h2>
-      <div class="meta mb-4">by Theresa Winston <span class="mx-2">&bullet;</span> Jan 18, 2019 at 2:00 pm <span class="mx-2">&bullet;</span> <a href="#">News</a></div>
-      <p>{{ story.story_body }}</p>
-    </div> 
+<div class="row">
+  <div class="col-4  mb-4 mb-lg-4">
+      <div class="h-entry">
+        <img src="{% static "images/hero_bg_1.jpg" %}" alt="Image" class="img-fluid">
+      </div>
   </div>
-  {% endblock %}
+
+  <div class="col-8">
+      <h2 class="font-size-regular"><a href="#">{{ story.story_title }}</a></h2>
+        <div class="meta mb-4">by {{story.user}} <span class="mx-2">&bullet;</span> Jan 18, 2019 at 2:00 pm <span class="mx-2">&bullet;</span> <a href="/stories/edit/{{ story.id }}">Edit</a></div>
+      <p>{{ story.story_body|linebreaks }}</p>
+  </div> 
+</div>
+{% endblock %}
