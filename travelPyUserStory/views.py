@@ -10,7 +10,7 @@ from django.http import Http404
 # Create your views here.
 
 
-def all(request):
+def all(request, city_id):
     try:
         context = {'stories':Story.objects.filter(city_id = 1)}
         return render(request, 'all.html',context)
