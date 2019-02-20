@@ -6,10 +6,14 @@
           <div class="container fill_height">
             <div class="row fill_height ">
                 <div class="search_panel search_style">
+            
+
                   <form action="#" method="post" id="search_form_2" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start form-container-align">
+                    {% csrf_token %}
                     <div class="search_item">
-                      <div class="label-location">Pickup Location</div>
-                      <input type="text" class="destination search_input input-location" required="required">
+                      <div class="label-location">Pickup</div>
+                      {{ form.pickup_location }}
+                      <!-- <input type="text" class="destination search_input input-location" required="required"> -->
                     </div>
                     <div class="search_item">
                       <div class="label-from">From</div>
@@ -19,7 +23,7 @@
                       <div class="label-to">To</div>
                       <input type="date" class="check_out search_input">
                     </div>
-                    <input type="submit" class="btn btn-primary search-button" value="search">
+                    <input type="submit" class="btn btn-primary search-button" value="Rent">
                   </form>
                 </div>
             </div>
