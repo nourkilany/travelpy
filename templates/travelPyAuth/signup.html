@@ -5,8 +5,9 @@
 
 
 {% extends "base.html" %} {% load static %} {% block main_block %}
-{% csrf_token %}
 
+<form method="POST">
+    {% csrf_token %}
 <div class="site-section border-top">
     <div class="container">
       <div class="row text-center">
@@ -25,7 +26,7 @@
                         <div class="col-2">
                             <div class="input-group">
                                 <label class="label">first name</label>
-                                <input class="input--style-4" type="text" name="first_name">
+                                <input class="input--style-4" type="text" name="username">
                             </div>
                             
                         </div>
@@ -34,7 +35,7 @@
                         <div class="col-2" >
                             <div class="input-group">
                                 <label class="label">Password</label>
-                                <input class="input--style-4" type="password" name="last_name">
+                                <input class="input--style-4" type="password" name="password">
                             </div>
                         </div>
                     </div>
@@ -68,7 +69,7 @@
 </div>
 </div>
 </div>
-{{form}}
-<input type="submit"/>
+</form>
+
 
 {% endblock %}
