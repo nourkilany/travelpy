@@ -1,0 +1,25 @@
+h1{
+    color: red;
+}
+.comment-wrapper{
+    border-top: 1px solid gray;
+}
+.comment-wrapper:nth-child(even){
+    color: darkslategray;
+}
+.comment-wrapper:nth-child(odd){
+    color: sienna;
+
+
+}
+.comment-author{
+    color: forestgreen;
+}
+.comment-box{
+    margin: 0px;
+}
+
+.comment-form > p > label{
+    display: none;
+}
+

@@ -4,13 +4,19 @@
     <div class="row align-items-center">
 
       <div class="col-6 col-xl-2">
-        <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">PyLands</a></h1>
+        <h1 class="mb-0"><a href="/" class="text-black h2 mb-0">PyLands</a></h1>
       </div>
       <div class="col-10 col-md-8 d-none d-xl-block">
         <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
           <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-            <li class="active">
+            <li 
+            {% if '/' == request.path  %}
+              class="active"
+            {% else %}
+              class="test"
+            {% endif %}
+            >
               <a href="http://127.0.0.1:8000">Home</a>
             </li>
             <li class="has-children">

@@ -55,3 +55,18 @@ class Poi(models.Model):
 
     def __str__(self):
         return self.poi_name
+
+
+class Hotel(models.Model):
+    hotel_name  = models.CharField(max_length  = 200) 
+    hotel_perex = models.TextField(blank=True,null=True)
+    hotel_desc  = models.TextField(blank=True,null=True)
+    hotel_lat   = models.FloatField(blank=True,null=True)
+    hotel_lng   = models.FloatField(blank=True,null=True)
+    hotel_rate  = models.DecimalField(blank=True,null=True,max_digits=11, decimal_places=10) # --> rating local !!
+    hotel_low_image  = models.CharField(blank=True,null=True,max_length = 400)
+    hotel_high_image = models.CharField(blank=True,null=True,max_length = 400)
+    city = models.ForeignKey('City', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.hotel_name
