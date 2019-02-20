@@ -46,15 +46,19 @@
       <div class="col-6 col-xl-2 text-right">
         <div class="d-none d-xl-inline-block">
           <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
+            {% if not request.session.user_id %}
             <li>
-              <a href="#" class="pl-0 pr-3 text-black"><span class="icon-tripadvisor"></span></a>
+              <a href="/auth/login" class="pl-0 pr-3 text-black">Login</a>
             </li>
             <li>
-              <a href="#" class="pl-3 pr-3 text-black"><span class="icon-twitter"></span></a>
+              <a href="/auth/signup" class="pl-3 pr-3 text-black">JoinUs</a>
             </li>
+            {% else %}
             <li>
-              <a href="#" class="pl-3 pr-3 text-black"><span class="icon-facebook"></span></a>
-            </li>
+            <a href="/auth/signout" class="pl-3 pr-3 text-black">Sign Out</a>
+            </li>  
+            {% endif %}
+
             <li>
                 <a href="https://github.com/nourkilany/travelpy" class="pl-3 pr-3 text-black"><span class="icon-github"></span></a>
               </li>

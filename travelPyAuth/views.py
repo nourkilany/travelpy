@@ -7,6 +7,7 @@ from django.contrib.auth import(
 	
 
 )
+from .forms import EditForm
 from django.contrib.auth.models import User
 
 from .forms import UserLoginForm, UserRegisterForm
@@ -86,3 +87,23 @@ def home_view(request):
 	print(userData.username)
 	print(userData.id)
 	return render(request,"travelPyAuth/about.html",context=userData_dict)
+
+
+def edit_profile(request):
+    # instance = get_object_or_404(, id=story_id) 
+	
+	my_user= User.objects.get(id = request.session['user_id'])
+	if request.method == "POST":
+		form = EditForm(request.POST, instance = my_user)
+		if form.is_valid():
+			my_user=User.objects.get(id= request.session['user_id'])
+			my_user.email=request.POST.get('email')
+			my_user.save()
+			return HttpResponseRedirect('/auth/home/')
+
+	context={}
+	return render(request,"travelPyAuth/signup.html",context)
+
+
+	
+

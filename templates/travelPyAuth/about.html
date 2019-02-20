@@ -1,7 +1,12 @@
 
 {% extends "base.html" %} {% load static %} {% block main_block %}
   <body>
-      <h1> {{ user.get_username }}</h1>
+    <div class="row row-space">
+      <div class="col-8">
+              <div class="input-group">
+  <input style= "margin-top:30px"; class="btn btn-primary py-3 px-5 text-white" type="submit"  value="Edit"/>
+</div>
+  </div>
   
   
 
@@ -286,7 +291,7 @@
     </footer>
   </div>
 
-<<<<<<< HEAD
+
   {% endblock %}
 
 </html>
