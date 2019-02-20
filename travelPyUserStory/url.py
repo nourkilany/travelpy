@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^new/$', views.new_story),
     url(r'^edit/(?P<story_id>\d+)/$', views.edit_story),
     url(r'^(?P<story_id>\d+)/$', views.read_story),
+    # url(r'^(?P<story_id>\d+)/(?P<city_id>\d+)/$', views.read_story),
 ]

@@ -12,7 +12,7 @@ class Story(models.Model):
 
 
 class Comment(models.Model):
-    user_id  = models.IntegerField()
+    user  = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     story = models.ForeignKey('Story', on_delete=models.CASCADE)
     comment_body = models.TextField()
 

@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 from .forms import StoryForm, CommentForm   
-from .models import Story
+from .models import Story,Comment
 from pprint  import pprint
 from django.contrib.auth.models import User
+from django.http import Http404
+
 
 # Create your views here.
 
@@ -16,9 +18,31 @@ def all(request):
     return render(request, 'all.html',context)
 
 
+
 def read_story(request, story_id):
-    context = {'story': Story.objects.get(id = story_id)}
-    return render(request, 'story.html',context)
+    print("hit")
+    form = CommentForm()
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = Comment.objects.create(
+                comment_body = request.POST.get("comment_body"),
+                story_id = story_id,
+                user_id = 10
+            )
+            return HttpResponseRedirect('/stories/'+str(story_id)+'/')
+    
+    try:
+        context = {
+        'story': Story.objects.get(id = story_id),
+        'comments': Comment.objects.filter(story_id = story_id),
+        'form':form
+        }
+        return render(request, 'story.html',context)
+    except Story.DoesNotExist:
+        raise Http404
+
+  
 
 
 
