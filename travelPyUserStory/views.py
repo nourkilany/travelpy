@@ -55,11 +55,7 @@ def new_story(request):
             story = Story.objects.create(
                 story_title = request.POST.get("story_title"),
                 story_body  = request.POST.get('story_body'),
-<<<<<<< HEAD
-                user     = auth.User,   # user_id ->
-=======
                 user_id     = request.session['user_id'],   # user_id ->
->>>>>>> b3b244e1fd4cf4d7d50ddc7ed79230e229371a81
                 city_id     = 100     # city_id ->
                 )
             return HttpResponseRedirect('/stories/'+str(story.id)+'/')
