@@ -24,7 +24,27 @@
         {% endfor %}
         </div>
       {% endif %}
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-7 text-center">
+          <h2 class="font-weight-light text-black">TOP Hotels in {{cityName}} </h2>
+        </div>
+      </div>
+      <div class="row" >
+          {% if hotels %}
+          {% for hotel in hotels %}
+            <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+              <a href="/poi/{{hotel.id}}" class="unit-1 text-center">
+                <img src={{hotel.image}} alt="Image" class="img-fluid" style="width: 350px; height: 399px">
+                <div class="unit-1-text">
+                  <h3 class="unit-1-heading">{{hotel.name}}</h3>
+                </div>
+              </a>
+            </div>
+        {% endfor %}
+        </div>
+      {% endif %}
+      </div>
+
     </div>
-  </div>
 </div>
 {% endblock %}

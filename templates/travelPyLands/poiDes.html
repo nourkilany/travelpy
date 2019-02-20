@@ -12,17 +12,25 @@
       <div class="site-section" data-aos="fade-up">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-md-6 mb-5 mb-md-0">
+          <div class="col-md-5 mb-4 mb-md-0">
             <img src="{{DesMediaImg}}" alt="Image" class="img-fluid rounded">
           </div>
-          <div class="col-md-6 pl-md-5">
-            <h2 class="font-weight-light text-black mb-4">Description</h2>
-            <p>{{poiDesPlaces.description.text}}</p>
-          </div>
+            {% if poiDesPlaces.description %}
+              <div class="col-md-6 pl-md-5">
+                <h2 class="font-weight-light text-black mb-4">Description</h2>
+                <p>{{poiDesPlaces.description.text}}</p>
+                  <p><a href="/hotelBooking" class="btn btn-primary py-3 px-5 text-white">BOOK NOW!</a></p>
+              </div>
+            {% else %}
+                <div class="col-md-6 pl-md-5">
+                <h2 class="font-weight-light text-black mb-4">You Can Book Now</h2>
+                    <p><a href="/hotelBooking" class="btn btn-primary py-3 px-5 text-white">BOOK NOW!</a></p>
+                </div>
+            {% endif %}
              <iframe width="600"
           height="450"
           frameborder="0"
-          style="border:0; position: center;"
+          style="border:0; position: center; margin-top: 10px;"
           src="https://www.google.com/maps/embed/v1/place?q={{poiDesPlaces.location.lat}},{{poiDesPlaces.location.lng}}&zoom=16&key=AIzaSyC9Hv41oUc2nRPjuiK6d3Wl6DkvbDZeUbs"
           allowfullscreen></iframe>
         </div>

@@ -11,6 +11,6 @@ class HotelReservation(models.Model):
     hotel = models.ForeignKey('travelPyLands.Hotel',on_delete=models.CASCADE)
     city  = models.ForeignKey('travelPyLands.City', on_delete=models.CASCADE)
     user  = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    check_in_date    = models.DateTimeField();
-    check_out_date   = models.DateTimeField();
-    number_of_adults = models.IntegerField();
+    check_in_date    = models.DateTimeField()
+    check_out_date   = models.DateTimeField()
+    number_of_adults = models.IntegerField()
