@@ -55,11 +55,7 @@ def new_story(request):
             story = Story.objects.create(
                 story_title = request.POST.get("story_title"),
                 story_body  = request.POST.get('story_body'),
-<<<<<<< HEAD
-                user     = auth.User,   # user_id ->
-=======
                 user_id     = request.session['user_id'],   # user_id ->
->>>>>>> b3b244e1fd4cf4d7d50ddc7ed79230e229371a81
                 city_id     = 100     # city_id ->
                 )
             return HttpResponseRedirect('/stories/'+str(story.id)+'/')
@@ -79,7 +75,7 @@ def edit_story(request, story_id):
                 story.story_body  = request.POST.get("story_body"),
             # Solving weird format in story_title and story_body
                 story.story_title = story.story_title[0] 
-                story.story_body  = story.story_body [0]
+                stsory.story_body  = story.story_body [0]
                 story.save()
                 return HttpResponseRedirect('/stories/'+story_id+'/')
             except Story.DoesNotExist:

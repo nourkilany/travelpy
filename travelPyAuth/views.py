@@ -102,7 +102,7 @@ def edit_profile(request):
 			return HttpResponseRedirect('/auth/home/')
 
 	context={}
-	return render(request,"travelPyAuth/signup.html",context)
+	return render(request,"travelPyAuth/edit.html",context)
 
 
 	
