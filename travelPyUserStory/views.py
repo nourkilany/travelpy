@@ -28,7 +28,7 @@ def read_story(request, story_id):
             comment = Comment.objects.create(
                 comment_body = request.POST.get("comment_body"),
                 story_id = story_id,
-                user_id = 10
+                user_id = request.session['user_id']
             )
             return HttpResponseRedirect('/stories/'+str(story_id)+'/')
     
@@ -54,8 +54,8 @@ def new_story(request):
             story = Story.objects.create(
                 story_title = request.POST.get("story_title"),
                 story_body  = request.POST.get('story_body'),
-                user_id     = 10,   # user_id ->
-                city_id     = 1     # city_id ->
+                user_id     = request.session['user_id'],   # user_id ->
+                city_id     = 100     # city_id ->
                 )
             return HttpResponseRedirect('/stories/'+str(story.id)+'/')
     return render(request,'new.html', {'form':form})
