@@ -3,10 +3,6 @@ from travelPyLands.models import City, Hotel
 from django.contrib.auth.models import User
 # Create your models here.
 
-
-
-
-
 class HotelReservation(models.Model):
     hotel = models.ForeignKey('travelPyLands.Hotel',on_delete=models.CASCADE)
     city  = models.ForeignKey('travelPyLands.City', on_delete=models.CASCADE)
