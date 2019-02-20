@@ -10,7 +10,7 @@ from django.http import Http404
 # Create your views here.
 
 
-def all(request, city_id):
+def all(request):
     try:
         context = {'stories':Story.objects.filter(city_id = 1)}
         return render(request, 'all.html',context)
@@ -28,7 +28,7 @@ def read_story(request, story_id):
             comment = Comment.objects.create(
                 comment_body = request.POST.get("comment_body"),
                 story_id = story_id,
-                user_id = request.session['user_id']
+                user = request.user
             )
             return HttpResponseRedirect('/stories/'+str(story_id)+'/')
     
@@ -36,7 +36,8 @@ def read_story(request, story_id):
         context = {
         'story': Story.objects.get(id = story_id),
         'comments': Comment.objects.filter(story_id = story_id),
-        'form':form
+        'form':form,
+        'username':User.username
         }
         return render(request, 'story.html',context)
     except Story.DoesNotExist:
@@ -47,25 +48,23 @@ def read_story(request, story_id):
 
 
 def new_story(request):
-    form = StoryForm()
-    print(request.session['user_id'])
-    if request.method =="POST":
-        form = StoryForm(request.POST)
-        if form.is_valid():
-            story = Story.objects.create(
-                story_title = request.POST.get("story_title"),
-                story_body  = request.POST.get('story_body'),
-<<<<<<< HEAD
-                user     = auth.User,   # user_id ->
-=======
-                user_id     = request.session['user_id'],   # user_id ->
->>>>>>> b3b244e1fd4cf4d7d50ddc7ed79230e229371a81
-                city_id     = 100     # city_id ->
-                )
-            return HttpResponseRedirect('/stories/'+str(story.id)+'/')
-    return render(request,'new.html', {'form':form})
+    if  request.user.is_authenticated():
+        print ("GOT IN ")
+        form = StoryForm()
+        if request.method =="POST":
+            form = StoryForm(request.POST)
+            if form.is_valid():
+                story = Story.objects.create(
+                    story_title = request.POST.get("story_title"),
+                    story_body  = request.POST.get('story_body'),
+                    user_id = request.user.id,
+                    city_id     = 100     # city_id ->
+                    )
+                return HttpResponseRedirect('/stories/'+str(story.id)+'/')
+        return render(request,'new.html', {'form':form})
+    else:
+        return HttpResponseRedirect('/auth/signup/')
     
-
 
 def edit_story(request, story_id):
     # instance = get_object_or_404(, id=story_id) 
