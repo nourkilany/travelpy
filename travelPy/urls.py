@@ -15,5 +15,5 @@ urlpatterns = [
     url(r'^hotelBooking/', include('travelPyHotelBooking.url')),
     # pycarrent urls
     url(r'^carRental/', include('travelPyCarRent.url')),
-	url(r'^auth/', include('travelPyAuth.url'))
+	url(r'^user/', include('travelPyAuth.url'))
 ]

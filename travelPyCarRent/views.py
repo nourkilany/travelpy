@@ -8,7 +8,7 @@ from travelPyLands.models import Poi
 
 def new_car_rent(request):
     form = CarRentForm()
-    form.fields["pickup_location"].queryset = Poi.objects.filter(city_id = 100)
+    form.fields["pickup_location"].queryset = Poi.objects.filter(city_id = 101)
     if request.method =="POST":
         form = CarRentForm(request.POST)
         car_request = CarRental.objects.create(
