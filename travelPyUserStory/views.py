@@ -9,12 +9,13 @@ from django.contrib.auth.decorators import login_required
 
 
 
+
 # Create your views here.
 
 
 def all(request):
     try:
-        context = {'stories':Story.objects.filter(city_id = 100)}
+        context = {'stories':Story.objects.filter(city_id = 1)}
         return render(request, 'all.html',context)
     except Story.DoesNotExist:
         raise Http404
