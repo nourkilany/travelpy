@@ -5,5 +5,5 @@ from django.conf.urls import url
 from travelPyHotelBooking import views
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'(?P<cityId>[0-9]+)/(?P<poiId>[a-zA-Z0-9.,:-]+)$', views.index, name='index'),
 ]

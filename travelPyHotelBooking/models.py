@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class HotelReservation(models.Model):
-    hotel = models.ForeignKey('travelPyLands.Hotel',on_delete=models.CASCADE)
+    hotel = models.CharField(max_length  = 200)
     city  = models.ForeignKey('travelPyLands.City', on_delete=models.CASCADE)
     user  = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     check_in_date    = models.DateTimeField()

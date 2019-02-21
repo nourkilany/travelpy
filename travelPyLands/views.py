@@ -65,20 +65,24 @@ def cityPoi(request,cityName):
     cityPoiData_dict = {'poi':getCityPlacesApi('sightseeing',city.id),
                         'hotels':getCityPlacesApi('sleeping',city.id),
                         'cityName':cityName,
+                        'cityId':city.id,
                         'continents': getContinents()}
     return render(request,"travelPyLands/cityPoi.html",context=cityPoiData_dict)
 
-def poiDescription(request,poiId):
+def poiDescription(request,cityId,poiId,poiName):
     poiDesResponse = requests.get(
         f'https://api.sygictravelapi.com/1.1/en/places/{poiId}',
         None, headers={
             'x-api-key': api_token
         })
+    print("hoteldes->"+poiName)
     poiDesData = poiDesResponse.json()
     poiDesPlace = poiDesData["data"]["place"]
     poiDesMediaImg = poiDesData["data"]["place"]["main_media"]["media"][0]["url"]
     poiDesData_dict = {'poiDesPlaces':poiDesPlace,
                        'DesMediaImg':poiDesMediaImg,
+                       'cityId':cityId,
+                       'poiName':poiName,
                        'continents': getContinents()}
     return render(request,"travelPyLands/poiDes.html",context=poiDesData_dict)
 
