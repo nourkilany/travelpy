@@ -33,7 +33,7 @@
           {% if hotels %}
           {% for hotel in hotels %}
             <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-              <a href="/poi/{{hotel.id}}" class="unit-1 text-center">
+              <a href="poi/{{cityId}}/{{hotel.id}}/{{hotel.name}}" class="unit-1 text-center">
                 <img src={{hotel.image}} alt="Image" class="img-fluid" style="width: 350px; height: 399px">
                 <div class="unit-1-text">
                   <h3 class="unit-1-heading">{{hotel.name}}</h3>
