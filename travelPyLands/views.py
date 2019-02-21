@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import requests
 from travelPyLands.models import City,Country,Continent
+from travelPyUserStory.models import Story
 
 # Create your views here.
 
@@ -62,11 +63,15 @@ def getApiList(parent, parentId, level):
 # send cityPoi from api to be rendered in cityPoi.html
 def cityPoi(request,cityId):
     cityId = int(cityId[5:])
+    city_stories = Story.objects.filter(city_id = cityId)
     cityPoiData_dict = {'poi':getCityPlacesApi('sightseeing',cityId),
                         'hotels':getCityPlacesApi('sleeping',cityId),
                         # 'cityName':City.objects.filter(id=cityId).first().city_name,
+                        'city_stories':city_stories,
                         'continents': getContinents()}
     return render(request,"travelPyLands/cityPoi.html",context=cityPoiData_dict)
+
+
 
 def poiDescription(request,cityId,poiId,poiName):
     poiDesResponse = requests.get(
