@@ -14,6 +14,7 @@ from .forms import UserLoginForm, UserRegisterForm
 from django.http import HttpResponse, HttpResponseRedirect
 from travelPyUserStory.models import Story
 from travelPyCarRent.models import CarRental
+from django.contrib import auth
 
 
 
@@ -117,3 +118,6 @@ def edit_profile(request):
 
 	
 
+def logout(request):
+    auth.logout(request)
+    return HttpResponseRedirect('/user/login')

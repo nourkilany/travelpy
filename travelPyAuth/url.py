@@ -9,6 +9,6 @@ urlpatterns = [
 	url(r'^signup/', register_view),
     url(r'^profile',profile_view, name="home"),
     url(r'^edit',edit_profile),
-    url(r'^signout',logout),
+    url(r'^logout',logout),
 
 ]

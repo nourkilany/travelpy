@@ -1,13 +1,16 @@
 
 {% extends "base.html" %} {% load static %} {% block main_block %}
   <body>
-    <div class="row row-space">
-      <div class="col-8">
-              <div class="input-group">
-                  <a href="/user/edit" class="pl-0 pr-3 text-black">Edit</a>
   
-</div>
-  </div>
+  <form action="/user/edit">
+                    <div>
+                        <div class="col-md-12">
+                                <div class="input-group">
+                                    <input type="submit" value="Edit" style= "margin-top:30px"; class="btn btn-primary py-3 px-5 text-white"/>
+                </div>
+                    </div>
+                    
+                </form>
   
   
 
