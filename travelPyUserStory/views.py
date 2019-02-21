@@ -5,6 +5,8 @@ from .models import Story,Comment
 from pprint  import pprint
 from django.contrib.auth.models import User
 from django.http import Http404
+from django.contrib.auth.decorators import login_required
+
 
 
 # Create your views here.
@@ -12,7 +14,7 @@ from django.http import Http404
 
 def all(request):
     try:
-        context = {'stories':Story.objects.filter(city_id = 1)}
+        context = {'stories':Story.objects.filter(city_id = 100)}
         return render(request, 'all.html',context)
     except Story.DoesNotExist:
         raise Http404
@@ -25,11 +27,15 @@ def read_story(request, story_id):
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
-            comment = Comment.objects.create(
-                comment_body = request.POST.get("comment_body"),
-                story_id = story_id,
-                user = request.user
-            )
+            try:
+                comment = Comment.objects.create(
+                    comment_body = request.POST.get("comment_body"),
+                    story_id = story_id,
+                    user = request.user
+                )
+            except Exception as e:
+                raise Http404
+
             return HttpResponseRedirect('/stories/'+str(story_id)+'/')
     
     try:
@@ -46,24 +52,24 @@ def read_story(request, story_id):
   
 
 
-
-def new_story(request):
-    if  request.user.is_authenticated():
-        print ("GOT IN ")
-        form = StoryForm()
-        if request.method =="POST":
-            form = StoryForm(request.POST)
-            if form.is_valid():
-                story = Story.objects.create(
-                    story_title = request.POST.get("story_title"),
-                    story_body  = request.POST.get('story_body'),
-                    user_id = request.user.id,
-                    city_id     = 100     # city_id ->
-                    )
-                return HttpResponseRedirect('/stories/'+str(story.id)+'/')
-        return render(request,'new.html', {'form':form})
-    else:
-        return HttpResponseRedirect('/auth/signup/')
+@login_required(login_url='/user/login/')
+def new_story(request): 
+    # if  request.user.is_authenticated():
+    print ("GOT IN ")
+    form = StoryForm()
+    if request.method =="POST":
+        form = StoryForm(request.POST)
+        if form.is_valid():
+            story = Story.objects.create(
+                story_title = request.POST.get("story_title"),
+                story_body  = request.POST.get('story_body'),
+                user_id = request.user.id,
+                city_id     = 100     # city_id ->
+                )
+            return HttpResponseRedirect('/stories/'+str(story.id)+'/')
+    return render(request,'new.html', {'form':form})
+    # else:
+        # return HttpResponseRedirect('/user/login/')
     
 
 def edit_story(request, story_id):
