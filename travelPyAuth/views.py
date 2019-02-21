@@ -9,7 +9,7 @@ from django.contrib.auth import(
 )
 from .forms import EditForm
 from django.contrib.auth.models import User
-
+from django.contrib.auth.decorators import login_required
 from .forms import UserLoginForm, UserRegisterForm
 from django.http import HttpResponse, HttpResponseRedirect
 from travelPyUserStory.models import Story
@@ -63,14 +63,14 @@ def register_view(request):
 		print('saved')
 		login(request,user)
 		request.session['user_id'] = user.id
-		print("ID ", request.session['user_id'])
-		x=user.id
-		y=user.username
-		print(x,y)
-		userData_dict={'id':x,
-		'username':y,
-		"aaa":"aaaaaaaaaaaaa"}
-		print(userData_dict)
+		# print("ID ", request.session['user_id'])
+		# x=user.id
+		# y=user.username
+		# print(x,y)
+		# userData_dict={'id':x,
+		# 'username':y,
+		# "aaa":"aaaaaaaaaaaaa"}
+		# print(userData_dict)
 		return HttpResponseRedirect('/user/profile')
 		
 
@@ -82,22 +82,24 @@ def register_view(request):
 }
 	return render(request,"travelPyAuth/signup.html",context)
 
+
+@login_required(login_url='/user/login/')
 def profile_view(request):
-	if request.user.is_authenticated():
-		userID = request.session['user_id']
-		userData = User.objects.filter(id = userID).first()
-		stories = Story.objects.filter(user_id = userID)
-		# hotel_resv = Story.objects.filter(user_id = userID)
-		car_rents = CarRental.objects.filter(user_id= userID)
-		userData_dict={'userdata':userData,
-						'user_stories':stories,
-						'car_rents':car_rents
-						}
-		print(userData.username)
-		print(userData.id)
-		return render(request,"travelPyAuth/profile.html",context=userData_dict)
-	else:
-		return HttpResponseRedirect('/user/login')
+	# if request.user.is_authenticated():
+	userID = request.session['user_id']
+	userData = User.objects.filter(id = userID).first()
+	stories = Story.objects.filter(user_id = userID)
+	# hotel_resv = Story.objects.filter(user_id = userID)
+	car_rents = CarRental.objects.filter(user_id= userID)
+	userData_dict={'userdata':userData,
+					'user_stories':stories,
+					'car_rents':car_rents
+					}
+	print(userData.username)
+	print(userData.id)
+	return render(request,"travelPyAuth/profile.html",context=userData_dict)
+	# else:
+		# return HttpResponseRedirect('/user/login')
 
 
 def edit_profile(request):

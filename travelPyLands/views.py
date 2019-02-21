@@ -7,7 +7,7 @@ from travelPyUserStory.models import Story
 # Create your views here.
 
 
-api_token = 'sLuqFkspC65EYyNlpJxLS6VEBDoOwgzsgJOaSgW3'
+api_token = 'AD0zQHhnAO27dR8Slqocm2FSH4mA4cKp8oSSCh5H'
 
 
 # send data from api to be rendered in index.html
@@ -68,6 +68,8 @@ def cityPoi(request,cityId):
                         'hotels':getCityPlacesApi('sleeping',cityId),
                         # 'cityName':City.objects.filter(id=cityId).first().city_name,
                         'city_stories':city_stories,
+                        'cityName':City.objects.filter(id=cityId).first().city_name,
+                        'cityId':cityId,
                         'continents': getContinents()}
     return render(request,"travelPyLands/cityPoi.html",context=cityPoiData_dict)
 
