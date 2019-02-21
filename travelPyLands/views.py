@@ -49,8 +49,8 @@ def addImagesToList(lst):
     return lst
 
 # get  8 entities from api and return list of them
-def getApiList(parent, parentId, level):
-    response = requests.get(f'https://api.sygictravelapi.com/1.1/en/places/list?parent={parent}:{parentId}&levels={level}&limit=9',
+def getApiList(parent, parentId, level,limit = 9):
+    response = requests.get(f'https://api.sygictravelapi.com/1.1/en/places/list?parent={parent}:{parentId}&levels={level}&limit={limit}',
                             None, headers={
             'x-api-key': api_token
         })

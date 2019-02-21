@@ -3,12 +3,13 @@ from django.http import HttpResponse
 from .models import CarRental
 from .forms import CarRentForm
 from travelPyLands.models import Poi
+from travelPyLands.views import getApiList
 # Create your views here.
 
 
-def new_car_rent(request):
+def new_car_rent(request,cityId):
     form = CarRentForm()
-    form.fields["pickup_location"].queryset = Poi.objects.filter(city_id = 101)
+
     if request.method =="POST":
         form = CarRentForm(request.POST)
         car_request = CarRental.objects.create(

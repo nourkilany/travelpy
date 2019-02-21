@@ -29,14 +29,16 @@
                 </ul>
               {% endif %}
             </li>
+            {% if cityName %}
             <li class="has-children">
               <a href="">Bookings</a>
               <ul class="dropdown">
                 <li><a href="http://127.0.0.1:8000/hotelBooking">Hotel</a></li>
-                <li><a href="http://127.0.0.1:8000/carRental">Car</a></li>
+                <li><a href="http://127.0.0.1:8000/carRental/{{cityId}}">Car</a></li>
                 <li><a href="http://127.0.0.1:8000/stories">Stories</a></li>
               </ul>
             </li>
+            {% endif %}
             <li><a href="/user/profile">Profile</a></li>
             <li><a href="blog.html">Blog</a></li>
             <!-- <li><a href="booking.html">Book Online</a></li> -->
