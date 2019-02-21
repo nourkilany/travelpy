@@ -15,18 +15,15 @@
           <div class="col-md-5 mb-4 mb-md-0">
             <img src="{{DesMediaImg}}" alt="Image" class="img-fluid rounded">
           </div>
-            {% if poiDesPlaces.description %}
-              <div class="col-md-6 pl-md-5">
+            <div class="col-md-6 pl-md-5">
                 <h2 class="font-weight-light text-black mb-4">Description</h2>
+            {% if poiDesPlaces.description %}
                 <p>{{poiDesPlaces.description.text}}</p>
-                  <p><a href="/hotelBooking" class="btn btn-primary py-3 px-5 text-white">BOOK NOW!</a></p>
-              </div>
             {% else %}
-                <div class="col-md-6 pl-md-5">
                 <h2 class="font-weight-light text-black mb-4">You Can Book Now</h2>
-                    <p><a href="/hotelBooking" class="btn btn-primary py-3 px-5 text-white">BOOK NOW!</a></p>
-                </div>
             {% endif %}
+                    <p><a href="/hotelBooking/{{cityId}}/{{poiId}}" class="btn btn-primary py-3 px-5 text-white">BOOK NOW!</a></p>
+                </div>
              <iframe width="600"
           height="450"
           frameborder="0"

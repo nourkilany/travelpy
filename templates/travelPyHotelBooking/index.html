@@ -15,23 +15,23 @@
         <div class="row">
           <div class="col-md-12 mb-5">
 
-            <form action="#" class="p-5 bg-white">
-
+            <form action="#" method="post" class="p-5 bg-white">
+              {% csrf_token %}
 
               <div class="row form-group">
                 <div class="col-md-6 mb-3 mb-md-0">
-                  <label class="text-black" for="checkin">Check In</label>
-                  <div class="input-group date" data-provide="datepicker" data-date-format="yyyy/mm/dd">
-                    <input type="text" id="checkin" class="form-control" placeholder="YYYY/MM/DD">
+                  <label class="text-black" >Check In</label>
+                  <div class="input-group date" data-provide="datepicker" data-date-format="yyyy-mm-dd">
+                      {{hotelForm.check_in_date}}
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <label class="text-black" for="checkout">Check Out</label>
-                  <div class="input-group date" data-provide="datepicker" data-date-format="yyyy/mm/dd">
-                    <input type="text" id="checkout" class="form-control" placeholder="YYYY/MM/DD">
+                  <label class="text-black">Check Out</label>
+                  <div class="input-group date" data-provide="datepicker" data-date-format="yyyy-mm-dd">
+                    {{hotelForm.check_out_date}}
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
@@ -41,13 +41,8 @@
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <label class="text-black" for="treatment">Number Of Adults</label>
-                  <select name="treatment" id="treatment" class="form-control">
-                    <option value="">1</option>
-                    <option value="">2</option>
-                    <option value="">3</option>
-                    <option value="">4</option>
-                  </select>
+                  <label class="text-black">Number Of Adults</label>
+                  {{hotelForm.number_of_adults}}
                 </div>
               </div>
 
