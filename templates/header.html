@@ -1,0 +1,79 @@
+<header class="site-navbar py-1" role="banner">
+
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-6 col-xl-2">
+        <h1 class="mb-0"><a href="/" class="text-black h2 mb-0">PyLando</a></h1>
+      </div>
+      <div class="col-10 col-md-8 d-none d-xl-block">
+        <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
+
+          <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+            <li 
+            {% if '/' == request.path  %}
+              class="active"
+            {% else %}
+              class="navigation_item"
+            {% endif %}
+            >
+              <a href="http://127.0.0.1:8000">Home</a>
+            </li>
+            <li class="has-children">
+              <a href="destination.html">Destinations</a>
+              {% if continents %}
+                <ul class="dropdown">
+                  {% for continent in continents %}
+                  <li><a href="/continent/{{continent.id}}">{{continent.continent_name}}</a></li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+            {% if cityName %}
+            <li class="has-children">
+              <a href="">Bookings</a>
+              <ul class="dropdown">
+                <li><a href="http://127.0.0.1:8000/hotelBooking">Hotel</a></li>
+                <li><a href="http://127.0.0.1:8000/carRental/{{cityId}}">Car</a></li>
+                <li><a href="http://127.0.0.1:8000/stories">Stories</a></li>
+              </ul>
+            </li>
+            {% endif %}
+            <li><a href="/user/profile">Profile</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <!-- <li><a href="booking.html">Book Online</a></li> -->
+          </ul>
+        </nav>
+      </div>
+
+      <div class="col-6 col-xl-2 text-right">
+        <div class="d-none d-xl-inline-block">
+          <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
+            {% if not request.session.user_id %}
+            <li>
+              <a href="/user/login" class="pl-0 pr-3 text-black">Login</a>
+            </li>
+            <li>
+              <a href="/user/signup" class="pl-3 pr-3 text-black">JoinUs</a>
+            </li>
+            {% else %}
+            <li>
+            <a href="/user/logout" class="pl-3 pr-3 text-black">Sign Out</a>
+            </li>  
+            {% endif %}
+
+            <li>
+                <a href="https://github.com/nourkilany/travelpy" class="pl-3 pr-3 text-black"><span class="icon-github"></span></a>
+              </li>
+
+          </ul>
+        </div>
+
+        <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+      </div>
+
+    </div>
+  </div>
+
+</header>

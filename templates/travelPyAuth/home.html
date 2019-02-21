@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% load static %} {% block main_block %}
+
+   
+        {% csrf_token %}
+
+<p> This is home page </p>
+<h1>{{ ay7aga }}</h1>
+<h1> Name: {{userdata.username}}</h1>
+<h2> Id: {{user.id}}</h2>
+<h2> email:{{user.email}}</h2>
+</body>
+
+{% endblock %}
+
+

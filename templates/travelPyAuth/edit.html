@@ -1,0 +1,59 @@
+
+
+
+
+
+
+{% extends "base.html" %} {% load static %} {% block main_block %}
+
+<form method="POST">
+    {% csrf_token %}
+<div class="site-section border-top">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h2 class="mb-5 text-black">Edit your Profile</h2>
+          
+    
+
+<div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+    <div class="wrapper wrapper--w680">
+        <div class="card card-4">
+            <div class="card-body">
+                
+                
+                   
+                    
+                    
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Email</label>
+                                <input class="input--style-4" type="email" name="email">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                        <div class="row row-space">
+                            <div class="col-8">
+                                    <div class="input-group">
+                        <input value="Submit" style= "margin-top:30px"; class="btn btn-primary py-3 px-5 text-white" type="submit"/>
+                    </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+</div>
+</div>
+</div>
+</form>
+
+
+{% endblock %}

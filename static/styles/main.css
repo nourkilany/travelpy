@@ -1,0 +1,40 @@
+.car-overlay {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 0;
+    height: 310px;
+    width: 1125px;
+    background: rgba(51, 51, 51, 0.5); 
+}
+.search_style{
+    margin-top: 100px;
+}
+.label-location{
+    color: white;
+    margin: 4px;
+}
+.label-from{
+    color: white;
+    margin: 4px;
+}
+.label-to{
+    color: white;
+    margin: 4px;
+}
+.input-location{
+    margin: 4px;
+}
+.input-from{
+    margin: 4px;
+}
+.input-to{
+    margin: 4px;
+}
+.search-button{
+    margin-top: 30px;
+    margin-left: 10px;
+}
+.form-container-align{
+    margin-left: 300px;
+}

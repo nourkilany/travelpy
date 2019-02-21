@@ -1,21 +1,19 @@
-"""travelPy URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.11/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.conf.urls import url, include
-    2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
-"""
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
+
+# to keep urls project clean use
+# url(r'^blog/', include('travelPyUserBlog.url'))
+# then create url.py with your app routing -> check -> travelPyUserBlog/url.py
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    # pylands urls
+    url(r'^', include("travelPyLands.urls")),
+    # pyblogs urls
+    url(r'^stories/', include('travelPyUserStory.url')),
+    # pyhotels urls
+    url(r'^hotelBooking/', include('travelPyHotelBooking.url')),
+    # pycarrent urls
+    url(r'^carRental/', include('travelPyCarRent.url')),
+	url(r'^user/', include('travelPyAuth.url'))
 ]
