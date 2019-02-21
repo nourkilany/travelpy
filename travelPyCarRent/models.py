@@ -1,12 +1,12 @@
 from django.db import models
 from datetime import datetime
-# TODO : don't forget to import User model when created
-class CarRentalForm(models.Model):
-    # * I assumed that the Model Class for the user is namd User as it is not
-    # * yet created so I'm going to comment it to avoid errors for now
-     
-    #user_id = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    pickup_location = models.CharField(max_length=50)
+from django.contrib.auth.models import User
+from travelPyLands.models import Poi
+
+class CarRental(models.Model):
+    
+    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    pickup_location = models.ForeignKey('travelPyLands.Poi', on_delete=models.CASCADE)
     from_date = models.DateTimeField(default=datetime.now)
     to_date = models.DateTimeField(default=datetime.now)
 

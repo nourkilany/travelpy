@@ -6,7 +6,7 @@ from travelPyLands.models import City,Country,Continent
 # Create your views here.
 
 
-api_token = 'W9vr5kpoQvfhFOlCeFkv26PvSlVsKIG8V5zQexr0'
+api_token = 'sLuqFkspC65EYyNlpJxLS6VEBDoOwgzsgJOaSgW3'
 
 
 # send data from api to be rendered in index.html
@@ -61,6 +61,7 @@ def getApiList(parent, parentId, level):
 # send cityPoi from api to be rendered in cityPoi.html
 def cityPoi(request,cityName):
     city = City.objects.filter(city_name=cityName).first()
+    print(cityName)
     cityPoiData_dict = {'poi':getCityPlacesApi('sightseeing',city.id),
                         'hotels':getCityPlacesApi('sleeping',city.id),
                         'cityName':cityName,

@@ -1,17 +1,6 @@
 {% load static %}
 <html>
 <head>
-    <!--  how to manage multiple css ?? linking them underneath each other may cause some classes to be overwriten  -->
-    <!--  
-            Use shorthand before each class ?
-            example ->  for shared resources use 
-                <div class = " shared-button "> ???
-                <div class = " land-button   "> ??? 
-                <div class = " blog-button   "> ???
-                <div class = " lend-button   "> ???
-
-                    ____ open for suggestions !
-        -->
     <title>PyLands</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -35,6 +24,7 @@
     <link rel="stylesheet" href="{% static 'travelPyLands/css/aos.css' %}">
 
     <link rel="stylesheet" href="{% static 'travelPyLands/css/style.css' %}">  
+    <link rel="stylesheet" href="{% static 'travelPyUserStory/css/style.css' %}">  
 </head>
 <body>
         {% include "header.html" %}
@@ -59,6 +49,12 @@
         <script src="{% static 'travelPyLands/js/aos.js' %}"></script>
       
         <script src="{% static 'travelPyLands/js/main.js' %}"></script>
+        <script>
+            $( function() {
+              $('#id_from_date').attr('type', 'date');
+              $('#id_to_date').attr('type', 'date');
+            } );
+        </script>
       
       </body>
 </html>

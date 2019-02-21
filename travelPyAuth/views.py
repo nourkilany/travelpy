@@ -7,10 +7,13 @@ from django.contrib.auth import(
 	
 
 )
+from .forms import EditForm
 from django.contrib.auth.models import User
 
 from .forms import UserLoginForm, UserRegisterForm
 from django.http import HttpResponse, HttpResponseRedirect
+from travelPyUserStory.models import Story
+from travelPyCarRent.models import CarRental
 
 
 
@@ -35,7 +38,7 @@ def login_view(request):
 		'username':y,
 		"aaa":"aaaaaaaaaaaaa"}
 		print(userData_dict)
-		return HttpResponseRedirect('/auth/home/')
+		return HttpResponseRedirect('/user/profile/')
 	#	if next:
 	#		return redirect(next)
 	#	return redirect('/')
@@ -56,7 +59,7 @@ def register_view(request):
 		password=form.cleaned_data.get('password')
 		user.set_password(password)
 		user.save()
-		
+		print('saved')
 		login(request,user)
 		request.session['user_id'] = user.id
 		print("ID ", request.session['user_id'])
@@ -67,7 +70,7 @@ def register_view(request):
 		'username':y,
 		"aaa":"aaaaaaaaaaaaa"}
 		print(userData_dict)
-		return HttpResponseRedirect('/auth/home/')
+		return HttpResponseRedirect('/user/profile')
 		
 
 		#if next:
@@ -78,11 +81,39 @@ def register_view(request):
 }
 	return render(request,"travelPyAuth/signup.html",context)
 
-def home_view(request):
-	userID = request.session['user_id']
-	userData = User.objects.filter(id = userID).first()
-	userData_dict={'userdata':userData,
-					'ay7aga':"aaaaaaa"}
-	print(userData.username)
-	print(userData.id)
-	return render(request,"travelPyAuth/about.html",context=userData_dict)
+def profile_view(request):
+	if request.user.is_authenticated():
+		userID = request.session['user_id']
+		userData = User.objects.filter(id = userID).first()
+		stories = Story.objects.filter(user_id = userID)
+		# hotel_resv = Story.objects.filter(user_id = userID)
+		car_rents = CarRental.objects.filter(user_id= userID)
+		userData_dict={'userdata':userData,
+						'user_stories':stories,
+						'car_rents':car_rents
+						}
+		print(userData.username)
+		print(userData.id)
+		return render(request,"travelPyAuth/profile.html",context=userData_dict)
+	else:
+		return HttpResponseRedirect('/user/login')
+
+
+def edit_profile(request):
+    # instance = get_object_or_404(, id=story_id) 
+	
+	my_user= User.objects.get(id = request.session['user_id'])
+	if request.method == "POST":
+		form = EditForm(request.POST, instance = my_user)
+		if form.is_valid():
+			my_user=User.objects.get(id= request.session['user_id'])
+			my_user.email=request.POST.get('email')
+			my_user.save()
+			return HttpResponseRedirect('/user/profile/')
+
+	context={}
+	return render(request,"travelPyAuth/edit.html",context)
+
+
+	
+

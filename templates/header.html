@@ -4,13 +4,19 @@
     <div class="row align-items-center">
 
       <div class="col-6 col-xl-2">
-        <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">PyLands</a></h1>
+        <h1 class="mb-0"><a href="/" class="text-black h2 mb-0">PyLando</a></h1>
       </div>
       <div class="col-10 col-md-8 d-none d-xl-block">
         <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
           <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-            <li class="active">
+            <li 
+            {% if '/' == request.path  %}
+              class="active"
+            {% else %}
+              class="navigation_item"
+            {% endif %}
+            >
               <a href="http://127.0.0.1:8000">Home</a>
             </li>
             <li class="has-children">
@@ -28,9 +34,10 @@
               <ul class="dropdown">
                 <li><a href="http://127.0.0.1:8000/hotelBooking">Hotel</a></li>
                 <li><a href="http://127.0.0.1:8000/carRental">Car</a></li>
+                <li><a href="http://127.0.0.1:8000/stories">Stories</a></li>
               </ul>
             </li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="/user/profile">Profile</a></li>
             <li><a href="blog.html">Blog</a></li>
             <!-- <li><a href="booking.html">Book Online</a></li> -->
           </ul>
@@ -40,15 +47,19 @@
       <div class="col-6 col-xl-2 text-right">
         <div class="d-none d-xl-inline-block">
           <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
+            {% if not request.session.user_id %}
             <li>
-              <a href="#" class="pl-0 pr-3 text-black"><span class="icon-tripadvisor"></span></a>
+              <a href="/user/login" class="pl-0 pr-3 text-black">Login</a>
             </li>
             <li>
-              <a href="#" class="pl-3 pr-3 text-black"><span class="icon-twitter"></span></a>
+              <a href="/user/signup" class="pl-3 pr-3 text-black">JoinUs</a>
             </li>
+            {% else %}
             <li>
-              <a href="#" class="pl-3 pr-3 text-black"><span class="icon-facebook"></span></a>
-            </li>
+            <a href="/user/signout" class="pl-3 pr-3 text-black">Sign Out</a>
+            </li>  
+            {% endif %}
+
             <li>
                 <a href="https://github.com/nourkilany/travelpy" class="pl-3 pr-3 text-black"><span class="icon-github"></span></a>
               </li>
