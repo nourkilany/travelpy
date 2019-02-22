@@ -6,7 +6,7 @@ from travelPyLands.models import Poi
 class CarRental(models.Model):
     
     user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    pickup_location = models.ForeignKey('travelPyLands.Poi', on_delete=models.CASCADE)
+    pickup_location = models.CharField(max_length  = 200)
     from_date = models.DateTimeField(default=datetime.now)
     to_date = models.DateTimeField(default=datetime.now)
 

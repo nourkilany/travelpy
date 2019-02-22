@@ -10,7 +10,13 @@
                     {% csrf_token %}
                     <div class="search_item">
                       <div class="label-location">Pickup</div>
-                        {{ form.pickup_location }}
+                        <select name="pickup_location" id="pickup_location_select">
+                          {%if pois%}
+                              {% for poi in pois %}
+                                  <option name="pickup_location" id="pickup_location">{{poi.name}}</option>
+                              {% endfor %}
+                          {% endif %}
+                        </select>
                       <!-- <input type="text" class="destination search_input input-location" required="required"> -->
                     </div>
                     <div class="search_item">
