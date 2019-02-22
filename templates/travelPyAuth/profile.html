@@ -48,6 +48,7 @@
 
         <div class="nonloop-block-13 owl-carousel">
           {% for story in user_stories %}
+
           <div class="item">
             <div class="container">
               <div class="row">
@@ -55,12 +56,13 @@
                   <img src="images/img_1.jpg" alt="Image" class="img-md-fluid">
                 </div>
                 <div class="overlap-left col-lg-6 bg-white p-md-5 align-self-center">
-                  <p class="">&mdash; <em>{{ story.story_title }}</em>, <a href="#">Traveler</a></p>
+                  <p class="">&mdash; <em>{{ story.story_title }}</em>,<p> <a href="/stories/{{story.id}}/">Go to story</a></p></p>
                   <p class="text-black lead">&ldquo;{{ story.story_body }}&rdquo;</p>
                 </div>
               </div>
             </div>
           </div>
+          
           {% endfor %}
       </div>
     </div>

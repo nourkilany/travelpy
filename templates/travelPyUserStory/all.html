@@ -1,17 +1,14 @@
 {% extends "base.html" %} {% load static %} {% block main_block %}
 <div class="site-section">
     <div class="container">
-      <h3>{City} stories</h3>
+      <h3>{{city_name}} stories</h3>
+      <a href="/stories/new/city_id={{city_id}}/">Share a Story</a>
     </div>
-  </div>
-
-     
-      
 
       
     <div class="site-section">
       <div class="container">
-        {% include "stories_slider.html" %}
+        {% include "travelPyUserStory/stories_silder.html" %}
 
         </div>
         <div class="row">
@@ -20,7 +17,6 @@
           </div>
         </div>
       </div>
-    </div>
-
+</div>
 {% endblock %}
    

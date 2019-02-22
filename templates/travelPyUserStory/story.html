@@ -1,15 +1,27 @@
 {% extends "base.html" %} {% load static %} {% block main_block %}
+
+
 <div class="container">
+    <div class="row">
+        <div class="col-6">
+          <a href="/stories/city_id={{story.city_id}}/">See city Stories</a>
+        </div>
+      </div>
+    
   <div class="row">
     <div class="col-4  mb-4 mb-lg-4">
         <div class="h-entry">
           <img src="{% static "images/hero_bg_1.jpg" %}" alt="Image" class="img-fluid">
         </div>
     </div>
-
+    
     <div class="col-8">
-        <h2 class="font-size-regular"><a href="#">{{ story.story_title }}</a></h2>
-          <div class="meta mb-4">by {{story.user}} <span class="mx-2">&bullet;</span> Jan 18, 2019 at 2:00 pm <span class="mx-2">&bullet;</span> <a href="/stories/edit/{{ story.id }}">Edit</a></div>
+      by <span style = "color: blueviolet"> {{story.user}}</span>
+      {% if is_author %}
+      <span> <a href="/stories/edit/{{ story.id }}">Edit</a>
+        <h2 class="font-size-regular"><a href="#">{{ story.story_title }}</a> </h2>
+        {% endif %}
+
         <p>{{ story.story_body|linebreaks }}</p>
     </div> 
   </div>
@@ -35,7 +47,7 @@
   <div class="row">
     <form method="POST"> {% csrf_token %}
     <div class="comment-form form-group">
-      <h6 class="col-2 comment-author">my_username_from_auth</h6>
+      <h6 class="col-2 comment-author">{{username}}</h6>
         {{ form.comment_body }}
         </div>
 
