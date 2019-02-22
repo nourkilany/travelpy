@@ -14,12 +14,6 @@
             <h2 class="font-weight-light text-black mb-4">{{ user.email }}</h2>
 
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae cumque eius modi expedita accusamus alias error totam ab magnam a mollitia magni, distinctio temporibus optio illo sapiente, odio unde natus.</p>
-
-            <ul class="list-unstyled">
-              <li class="d-flex align-items-center"><span class="icon-check2 text-primary h3 mr-2"></span><span>Vitae cumque eius modi expedita</span></li>
-              <li class="d-flex align-items-center"><span class="icon-check2 text-primary h3 mr-2"></span><span>Totam at maxime Accusantium</span></li>
-              <li class="d-flex align-items-center"><span class="icon-check2 text-primary h3 mr-2"></span><span>Distinctio temporibus</span></li>
 
             </ul>
           </div>
@@ -84,34 +78,27 @@
     </div>
 
 
-    <table class="table">
+    <table class="table container">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
+          <th scope="col">Hotal Name</th>
+          <th scope="col">City Name</th>
+          <th scope="col">Chech In Date</th>
+          <th scope="col">Chech Out Date</th>
+          <th scope="col">Number of Adults</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
+          {%for resv in hotel_resv%}
+          <tr>
+            <td> {{ resv.hotel }} </td>
+            <td> {{ resv.city }} </td>
+            <td> {{ resv.check_in_date }} </td>
+            <td> {{ resv.check_out_date }} </td>
+            <td> {{ resv.number_of_adults }} </td>
+          </tr>
+          {%endfor%}
+  
       </tbody>
     </table>
     <div class="site-section border-top">
@@ -123,36 +110,26 @@
           </div>
         </div>
       </div>
+      
     </div>
-
-    <table class="table">
+    <table class="table container">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
+          <th scope="col">Pick up Location</th>
+          <th scope="col">From</th>
+          <th scope="col">To</th>
         </tr>
       </thead>
       <tbody>
+        
+        {%for rent in car_rents%}
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          <td> {{ rent.pickup_location }} </td>
+          <td>{{ rent.from_date }}</td>
+          <td>{{ rent.to_date }}</td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
+        {%endfor%}
+
       </tbody>
     </table>
 
