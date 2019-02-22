@@ -1,17 +1,25 @@
 {% extends "base.html" %} {% load static %} {% block main_block %}
+
+
 <div class="container">
+    <div class="row">
+        <div class="col-6">
+          <a href="/stories/city_id={{story.city_id}}/">See city Stories</a>
+        </div>
+      </div>
+    
   <div class="row">
     <div class="col-4  mb-4 mb-lg-4">
         <div class="h-entry">
           <img src="{% static "images/hero_bg_1.jpg" %}" alt="Image" class="img-fluid">
         </div>
     </div>
-
+    
     <div class="col-8">
+      by <span style = "color: blueviolet"> {{story.user}}</span>
+      {% if is_author %}
+      <span> <a href="/stories/edit/{{ story.id }}">Edit</a>
         <h2 class="font-size-regular"><a href="#">{{ story.story_title }}</a> </h2>
-        by <span style = "color: blueviolet"> {{story.user}}</span>
-        {% if is_author %}
-          <span> <a href="/stories/edit/{{ story.id }}">Edit</a>
         {% endif %}
 
         <p>{{ story.story_body|linebreaks }}</p>

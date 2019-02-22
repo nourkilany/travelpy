@@ -1,6 +1,6 @@
 from django import forms
 from .models import CarRental
-
+from travelPyLands.views import getApiList
 
 class CarRentForm(forms.ModelForm):
     class Meta:
@@ -9,4 +9,3 @@ class CarRentForm(forms.ModelForm):
         widgets = {'pickup_location': forms.Select( attrs={'class': 'destination search_input input-location'}),
          'from_date': forms.DateInput(attrs={'type':"date",'class':'check_in search_input', 'id':"datepicker"}),
          'to_date': forms.DateInput(attrs={'type':"date",'class':'check_out search_input', 'id':"datepicker"})}
-         
