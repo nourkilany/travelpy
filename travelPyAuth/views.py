@@ -61,6 +61,7 @@ def register_view(request):
 def profile_view(request):
 	userID = request.session['user_id']
 	userData = User.objects.filter(id = userID).first()
+	
 	stories = Story.objects.filter(user_id = userID)
 	hotel_resv = HotelReservation.objects.filter(user_id = userID)
 	car_rents = CarRental.objects.filter(user_id= userID)
@@ -79,6 +80,8 @@ def edit_profile(request):
 		form = EditForm(request.POST, instance = my_user)
 		if form.is_valid():
 			my_user=User.objects.get(id= request.session['user_id'])
+			my_user.first_name=request.POST.get('first_name')
+			my_user.last_name=request.POST.get('last_name')
 			my_user.email=request.POST.get('email')
 			my_user.save()
 			return HttpResponseRedirect('/user/profile/')

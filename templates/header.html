@@ -58,6 +58,9 @@
             </li>
             {% else %}
             <li>
+              <li>
+                  {{ user.get_username }} 
+              </li>
             <a href="/user/logout" class="pl-3 pr-3 text-black">Sign Out</a>
             </li>  
             {% endif %}
