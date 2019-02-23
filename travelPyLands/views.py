@@ -7,7 +7,7 @@ from travelPyUserStory.models import Story
 # Create your views here.
 
 
-api_token = '2qKld38mU5pybiG2mRs6aFA2ZooqFaO5ViphWIKg'
+api_token = 'Y0qpTL2Lmf2fSJGwI81C1ac3HlHBwqLg6ecxzCtw'
 
 
 # send data from api to be rendered in index.html
